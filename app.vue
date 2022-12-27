@@ -20,7 +20,7 @@ useHead({
 
 <style>
 .app-view {
-  background: #fff url(/img/muster_bg4.gif) top left;
+  background: #fff url(~/assets/img/muster_bg4.gif) top left;
 }
 
 img {max-width: 100%;}

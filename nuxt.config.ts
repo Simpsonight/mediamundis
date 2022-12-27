@@ -4,5 +4,19 @@ import { defineNuxtConfig } from 'nuxt'
 export default defineNuxtConfig({
     typescript: {
         shim: false
+    },
+    buildModules: [
+        '@nuxtjs/google-fonts'
+    ],
+    googleFonts: {
+        download: true,
+        base64: true,
+        display: 'swap',
+        families: {
+            Raleway: {
+                wght: [100, 300],
+                ital: [100]
+            },
+        }
     }
 })

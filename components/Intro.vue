@@ -1,13 +1,14 @@
 <template>
-    <img src="/img/mediamundis.png" width="397" height="54" alt="mediamundis - Simon Kemmerling" />
+    <img src="~/assets/img/mediamundis.svg" width="397" height="54" alt="mediamundis - Simon Kemmerling" />
     <h1 class="font-sm pb-0">Simon Kemmerling <br><span class="grey">Full Stack Developer and Consultant</span></h1>
     <p class="font-sm pt-0 grey"><a href="mailto:sk@mediamundis.de">sk@mediamundis.de</a> | <a href="https://www.linkedin.com/in/simon-kemmerling/">LinkedIn</a> | <a href="https://www.xing.com/profile/Simon_Kemmerling/cv">Xing</a></p>
 </template>
 
 <style scoped>
     .font-sm {
-        font: 12px Arial, Helvetica, sans-serif;
-        padding: 14px;
+        font-family: 'Raleway';
+        font-size: 12px;
+        padding: 14px 14px 14px 0;
     }
 
     .pt-0 {padding-top:0}
