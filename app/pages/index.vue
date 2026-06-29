@@ -1,3 +1,11 @@
+<script setup lang="ts">
+useSeoMeta({
+  title: 'Startseite',
+  description:
+    'mediamundis – Platzhalterbeschreibung. Finale Copy folgt in der Konzeptphase.',
+});
+</script>
+
 <template>
   <section class="mx-auto max-w-6xl px-4 py-24">
     <p class="text-sm font-semibold uppercase tracking-widest text-brand-500">

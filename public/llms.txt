@@ -1,0 +1,10 @@
+# mediamundis
+
+> mediamundis – Marketing-/Landing-Website. (Platzhalter; finalisieren in der Konzeptphase.)
+
+## Seiten
+- [Startseite](https://www.mediamundis.de/): Einstieg und Überblick.
+
+## Hinweise
+- Sprache: Deutsch.
+- Inhalt befindet sich im Aufbau.

@@ -20,6 +20,12 @@ export default defineNuxtConfig({
     defaultLocale: 'de',
   },
 
+  // SEO/GEO: KI-Crawler ausdrücklich zulassen
+  robots: {
+    allow: ['Googlebot', 'GPTBot', 'PerplexityBot', 'ClaudeBot', 'Google-Extended'],
+    // Standardmäßig wird alles erlaubt; hier nur zur Klarstellung der GEO-Absicht.
+  },
+
   app: {
     head: {
       htmlAttrs: { lang: 'de' },
