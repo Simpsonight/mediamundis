@@ -25,6 +25,21 @@
   --text-lead: clamp(18px, 1.7vw, 25px);
   --text-lead-soft: clamp(15px, 1.3vw, 18px);
   --text-logo: clamp(18px, 1.9vw, 25px);
+
+  /* motion */
+  --ease-brand: cubic-bezier(0.2, 0.7, 0.2, 1);
+
+  /* tag surface (was hardcoded #FBFBFB) */
+  --color-tag: #FBFBFB;
+
+  /* fluid spacing scale */
+  --space-2xs: clamp(8px, 1.2vw, 12px);
+  --space-xs: clamp(12px, 2vw, 20px);
+  --space-sm: clamp(20px, 3vw, 32px);
+  --space-md: clamp(32px, 4.5vw, 56px);
+  --space-lg: clamp(48px, 7vw, 90px);
+  --space-xl: clamp(64px, 9vw, 120px);
+  --space-2xl: clamp(80px, 11vw, 168px);
 }
 
 :root {
@@ -59,6 +74,10 @@
   z-index: 2;
   background: var(--color-bg);
   box-shadow: 0 -24px 70px rgba(20, 22, 26, 0.10);
+}
+
+@utility text-balance {
+  text-wrap: balance;
 }
 
 .reveal {
