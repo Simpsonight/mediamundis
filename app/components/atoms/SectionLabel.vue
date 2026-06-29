@@ -17,7 +17,7 @@ defineProps<{
   display: flex;
   align-items: center;
   gap: 14px;
-  padding: clamp(50px, 7vw, 90px) 0 8px;
+  padding: var(--space-lg) 0 8px;
 }
 .label-text {
   font-size: 13px;

@@ -67,6 +67,7 @@ h1 {
   line-height: 0.98;
   letter-spacing: -0.03em;
   max-width: 17ch;
+  text-wrap: balance;
   animation: heroRise 0.8s cubic-bezier(.2,.7,.2,1) both;
 }
 

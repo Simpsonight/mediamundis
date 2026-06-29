@@ -34,7 +34,7 @@ const rRow = useReveal()
 <style scoped>
 /* demo lines 154-166, 320-332 */
 .contact {
-  padding: clamp(70px, 11vw, 170px) 0 clamp(50px, 7vw, 90px);
+  padding: var(--space-2xl) 0 var(--space-lg);
 }
 
 /* demo line 155: text-contact token */
@@ -43,6 +43,7 @@ h2 {
   font-size: var(--text-contact);
   line-height: 0.94;
   letter-spacing: -0.03em;
+  text-wrap: balance;
 }
 
 /* demo line 156: grey accent */

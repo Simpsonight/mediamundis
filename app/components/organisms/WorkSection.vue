@@ -55,7 +55,8 @@ const rRows = [rRow0, rRow1, rRow2, rRow3]
   line-height: 0.98;
   letter-spacing: -0.03em;
   max-width: 18ch;
-  margin: clamp(20px, 3vw, 40px) 0 clamp(30px, 5vw, 60px);
+  text-wrap: balance;
+  margin: var(--space-sm) 0 var(--space-md);
 }
 
 /* demo line 114: grey accent on "zufriedene Kunden." */

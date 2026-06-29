@@ -63,6 +63,7 @@ const fill = computed(() =>
   line-height: 0.96;
   letter-spacing: -0.03em;
   max-width: 11ch;
+  text-wrap: balance;
 }
 
 /* demo line 97 */

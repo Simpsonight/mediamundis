@@ -19,7 +19,7 @@ import { site } from '~/data/site'
 <style scoped>
 /* demo lines 70-76, 204-212 */
 .lead {
-  padding: clamp(54px, 8vw, 110px) 0 clamp(10px, 2vw, 20px);
+  padding: var(--space-xl) 0 var(--space-2xs);
 }
 
 .lead-grid {
@@ -28,9 +28,10 @@ import { site } from '~/data/site'
   gap: clamp(28px, 5vw, 72px);
 }
 
-/* demo line 72: first paragraph (primary HTML) */
+/* demo line 72: first paragraph (primary HTML) — intro voice: larger + medium weight */
 .primary {
-  font-size: var(--text-lead);
+  font-size: clamp(20px, 1.9vw, 28px);
+  font-weight: 500;
   line-height: 1.44;
   color: var(--color-ink);
   max-width: 34ch;

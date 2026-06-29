@@ -19,7 +19,7 @@ footer {
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 16px;
-  margin-top: clamp(60px, 9vw, 120px);
+  margin-top: var(--space-xl);
   padding-top: 26px;
   border-top: 1px solid var(--color-line);
   font-size: 13px;

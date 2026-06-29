@@ -23,7 +23,7 @@ import { clients } from '~/data/clients'
 <style scoped>
 /* demo lines 139-152 */
 .clients {
-  padding: clamp(46px, 7vw, 90px) 0 0;
+  padding: var(--space-lg) 0 0;
 }
 
 .lbl {

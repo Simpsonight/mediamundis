@@ -32,7 +32,7 @@ defineProps<{
   grid-template-columns: 1fr auto;
   gap: clamp(24px, 4vw, 64px);
   align-items: center;
-  padding: clamp(26px, 3.4vw, 46px) 0;
+  padding: var(--space-md) 0;
   border-bottom: 1px solid var(--color-line);
   text-decoration: none;
   position: relative;
@@ -60,6 +60,7 @@ h3 {
   line-height: 1;
   letter-spacing: -0.03em;
   margin: 12px 0 10px;
+  text-wrap: balance;
   display: flex;
   align-items: center;
   gap: 16px;
