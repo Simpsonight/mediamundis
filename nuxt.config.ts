@@ -1,22 +1,47 @@
-import { defineNuxtConfig } from 'nuxt'
+// https://nuxt.com/docs/api/configuration/nuxt-config
+import tailwindcss from '@tailwindcss/vite';
 
-// https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-    typescript: {
-        shim: false
+  compatibilityDate: '2025-07-15',
+  devtools: { enabled: true },
+
+  modules: ['@nuxt/eslint', '@nuxt/fonts', '@nuxt/image', '@nuxtjs/seo'],
+
+  css: ['~/assets/css/main.css'],
+
+  vite: {
+    plugins: [tailwindcss()],
+  },
+
+  // SEO/GEO: zentrale Site-Identität (von @nuxtjs/seo genutzt)
+  site: {
+    url: 'https://www.mediamundis.de',
+    name: 'mediamundis',
+    defaultLocale: 'de',
+  },
+
+  app: {
+    head: {
+      htmlAttrs: { lang: 'de' },
     },
-    buildModules: [
-        '@nuxtjs/google-fonts'
+  },
+
+  // SSG: alle verlinkten Routen statisch vorrendern
+  nitro: {
+    prerender: {
+      crawlLinks: true,
+      routes: ['/'],
+    },
+  },
+
+  fonts: {
+    defaults: {
+      preload: true,
+      display: 'swap',
+      weights: [400, 600, 700],
+    },
+    families: [
+      { name: 'Inter', provider: 'google', weights: [400, 600, 700], styles: ['normal'], global: true },
     ],
-    googleFonts: {
-        download: true,
-        base64: true,
-        display: 'swap',
-        families: {
-            Raleway: {
-                wght: [100, 300],
-                ital: [100]
-            },
-        }
-    }
-})
+  },
+});
