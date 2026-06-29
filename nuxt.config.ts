@@ -50,10 +50,10 @@ export default defineNuxtConfig({
     defaults: {
       preload: true,
       display: 'swap',
-      weights: [400, 600, 700],
+      weights: [400, 500, 600, 700, 800],
     },
     families: [
-      { name: 'Inter', provider: 'google', weights: [400, 600, 700], styles: ['normal'], global: true },
+      { name: 'Archivo', provider: 'google', weights: [400, 500, 600, 700, 800], styles: ['normal'], global: true },
     ],
   },
 });
