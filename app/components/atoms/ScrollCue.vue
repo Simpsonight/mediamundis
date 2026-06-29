@@ -1,5 +1,5 @@
 <template>
-  <div class="scroll-cue">
+  <div class="scroll-cue" aria-hidden="true">
     <i class="bar-line" />
     <span>Scroll</span>
   </div>

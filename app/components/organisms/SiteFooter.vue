@@ -23,6 +23,6 @@ footer {
   padding-top: 26px;
   border-top: 1px solid var(--color-line);
   font-size: 13px;
-  color: var(--color-grey);
+  color: var(--color-grey-strong);
 }
 </style>

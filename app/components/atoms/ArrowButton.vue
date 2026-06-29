@@ -43,4 +43,10 @@ defineProps<{
   width: 42%;
   height: 42%;
 }
+
+/* a11y focus ring */
+.arrow-btn:focus-visible {
+  outline: 2px solid var(--color-orange);
+  outline-offset: 2px;
+}
 </style>

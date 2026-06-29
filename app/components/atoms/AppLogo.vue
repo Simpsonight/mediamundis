@@ -16,6 +16,13 @@
   text-decoration: none;
   color: inherit;
 }
+
+/* a11y focus ring */
+.brand:focus-visible {
+  outline: 2px solid var(--color-orange);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
 .wordmark {
   font-family: var(--font-sans);
   font-weight: 800;

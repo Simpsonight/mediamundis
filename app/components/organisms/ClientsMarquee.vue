@@ -30,7 +30,7 @@ import { clients } from '~/data/clients'
   font-size: 12px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--color-grey);
+  color: var(--color-grey-strong);
   font-weight: 600;
   margin-bottom: 26px;
 }

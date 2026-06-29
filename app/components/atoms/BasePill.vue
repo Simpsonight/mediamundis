@@ -37,4 +37,10 @@ defineProps<{
   background: var(--color-orange);
   transform: translateY(-1px);
 }
+
+/* a11y focus ring */
+.pill:focus-visible {
+  outline: 2px solid var(--color-orange);
+  outline-offset: 2px;
+}
 </style>

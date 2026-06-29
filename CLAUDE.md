@@ -40,6 +40,7 @@ There is no unit-test framework; verification is via build/run/output checks.
 ## Conventions
 
 - Nuxt auto-imports composables, Vue APIs, components, and `@nuxtjs/seo`/schema.org helpers — do not add manual imports for these.
+- `~` resolves to the `app/` srcDir. Use `~/composables/…`, `~/data/…` for explicit imports; components are auto-imported by bare name (`pathPrefix: false`) — no import path needed.
 - UI text is German.
 - Never commit `.nuxt/` or `.output/` (gitignored).
 - Do not reintroduce UnoCSS or @vueuse/motion (removed in the rebuild).

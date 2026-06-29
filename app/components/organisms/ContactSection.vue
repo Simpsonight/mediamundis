@@ -78,6 +78,12 @@ h2 {
   gap: 24px;
 }
 
+/* a11y focus ring */
+.mail:focus-visible {
+  outline: 2px solid var(--color-orange);
+  outline-offset: 2px;
+}
+
 .mail-icon {
   width: 0.7em;
   height: 0.7em;

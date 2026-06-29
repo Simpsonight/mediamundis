@@ -49,7 +49,7 @@ defineProps<{
   font-size: 12px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--color-grey);
+  color: var(--color-grey-strong);
   font-weight: 600;
 }
 
@@ -86,7 +86,7 @@ p {
 .meta {
   margin-top: 14px;
   font-size: 13px;
-  color: var(--color-grey);
+  color: var(--color-grey-strong);
   font-weight: 500;
   display: flex;
   gap: 14px;
