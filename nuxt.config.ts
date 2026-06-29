@@ -2,7 +2,7 @@
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineNuxtConfig({
-  compatibilityDate: '2025-07-15',
+  compatibilityDate: '2026-06-29',
   devtools: { enabled: true },
 
   modules: ['@nuxt/eslint', '@nuxt/fonts', '@nuxt/image', '@nuxtjs/seo'],
@@ -20,15 +20,21 @@ export default defineNuxtConfig({
     defaultLocale: 'de',
   },
 
-  // SEO/GEO: KI-Crawler ausdrücklich zulassen
+  // SEO/GEO: KI-Crawler und Suchmaschinen-Bots ausdrücklich zulassen (GEO-Absicht)
   robots: {
-    allow: ['Googlebot', 'GPTBot', 'PerplexityBot', 'ClaudeBot', 'Google-Extended'],
-    // Standardmäßig wird alles erlaubt; hier nur zur Klarstellung der GEO-Absicht.
+    groups: [
+      {
+        // GEO: KI-Crawler (ChatGPT, Perplexity, Claude, Google-Extended) explizit zulassen
+        userAgent: ['Googlebot', 'GPTBot', 'PerplexityBot', 'ClaudeBot', 'Google-Extended'],
+        allow: ['/'],
+      },
+    ],
   },
 
   app: {
     head: {
       htmlAttrs: { lang: 'de' },
+      link: [{ rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
     },
   },
 

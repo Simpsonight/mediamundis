@@ -1,6 +1,8 @@
 <script setup lang="ts">
 useSeoMeta({
   titleTemplate: '%s · mediamundis',
+  // Standard-Fallback-Beschreibung; wird auf Seiten mit eigener Beschreibung überschrieben
+  description: 'mediamundis – Kommunikation, die wirkt. Wir gestalten digitale Auftritte mit Haltung.',
   ogType: 'website',
   ogSiteName: 'mediamundis',
   ogLocale: 'de_DE',
