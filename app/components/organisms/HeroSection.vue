@@ -1,0 +1,85 @@
+<script setup lang="ts">
+import { site } from '~/app/data/site'
+</script>
+
+<template>
+  <header id="top" class="hero">
+    <div class="dotgrid" aria-hidden="true" />
+    <div class="hero-center wrap">
+      <h1>{{ site.hero.lead }}<span class="fade">{{ site.hero.faded }}</span></h1>
+      <p class="hero-sub">{{ site.hero.sub }}</p>
+    </div>
+    <ScrollCue />
+  </header>
+</template>
+
+<style scoped>
+/* demo lines 49-65, 193-200 */
+.hero {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* demo lines 51-53: dot grid with radial-gradient + mask */
+.dotgrid {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(var(--color-grey-soft) 1px, transparent 1.4px);
+  background-size: 22px 22px;
+  -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 40%, transparent 72%);
+  mask-image: linear-gradient(180deg, #000 0%, #000 40%, transparent 72%);
+  opacity: 0.6;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-center {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: var(--navh);
+  padding-bottom: clamp(40px, 6vh, 80px);
+}
+
+/* demo line 56: text-hero token */
+h1 {
+  font-weight: 600;
+  font-size: var(--text-hero);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+  max-width: 17ch;
+}
+
+/* demo lines 57-58: gradient fade text */
+.fade {
+  background: linear-gradient(90deg, var(--color-ink) 35%, var(--color-grey-soft));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* demo line 59 */
+.hero-sub {
+  margin-top: clamp(18px, 2.4vw, 30px);
+  font-size: clamp(15px, 1.4vw, 18px);
+  color: var(--color-ink-soft);
+  font-weight: 500;
+}
+
+/* demo lines 170-176: reduced-motion — static hero, no sticky */
+@media (prefers-reduced-motion: reduce) {
+  .hero {
+    position: static;
+    height: auto;
+    min-height: 100svh;
+  }
+}
+</style>
