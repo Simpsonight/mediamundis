@@ -3,10 +3,19 @@ defineProps<{
   to: string
   label: string
 }>()
+
+const { el, style: magneticStyle } = useMagnetic()
+
+// Merge magnetic transform transition with the pill's background transition so the
+// inline style (which overrides CSS) carries both transition declarations.
+const pillStyle = computed(() => ({
+  ...magneticStyle.value,
+  transition: `background 0.25s var(--ease-brand), ${magneticStyle.value.transition}`,
+}))
 </script>
 
 <template>
-  <a :href="to" class="pill">
+  <a :ref="el" :href="to" :style="pillStyle" class="pill">
     <IconArrow variant="diag" class="pill-icon" />
     {{ label }}
   </a>
@@ -25,7 +34,6 @@ defineProps<{
   font-size: 14px;
   font-weight: 500;
   text-decoration: none;
-  transition: background 0.25s var(--ease-brand), transform 0.25s var(--ease-brand);
   white-space: nowrap;
 }
 .pill-icon {
@@ -35,7 +43,6 @@ defineProps<{
 }
 .pill:hover {
   background: var(--color-orange);
-  transform: translateY(-1px);
 }
 
 /* a11y focus ring */

@@ -64,6 +64,7 @@ defineProps<{
 
 .nav-links a:hover {
   color: var(--color-ink);
+  font-weight: 600;
 }
 
 .nav-links a:hover::after {
