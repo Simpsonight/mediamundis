@@ -35,11 +35,18 @@ const gridStyle = computed(() => ({
     :style="gridStyle"
     aria-hidden="true"
   >
-    <i
-      v-for="idx in total"
-      :key="idx"
-      :class="{ on: idx - 1 === onIndex }"
-    />
+    <template v-for="idx in total" :key="idx">
+      <!-- fill branch: in-range dot that is NOT the permanent orange dot -->
+      <i
+        v-if="fill > 0 && idx - 1 < fill && idx - 1 !== onIndex"
+        style="background: color-mix(in srgb, var(--color-orange) 55%, var(--color-dot))"
+      />
+      <!-- default branch: permanent on-dot or unfilled dot (SSR always takes this path) -->
+      <i
+        v-else
+        :class="{ on: idx - 1 === onIndex }"
+      />
+    </template>
   </div>
 </template>
 

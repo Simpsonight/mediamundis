@@ -1,15 +1,22 @@
 <script setup lang="ts">
 import type { Service } from '~/data/types'
 
-defineProps<{
+const props = defineProps<{
   service: Service
   index: number
 }>()
+
+const cardRef = ref<HTMLElement | null>(null)
+const progress = usePinProgress(cardRef)
+const reduced = useReducedMotion()
+const fill = computed(() =>
+  reduced.value ? 0 : Math.round(progress.value * props.service.matrix.cols * props.service.matrix.rows)
+)
 </script>
 
 <template>
   <!-- Root has class="group" so ArrowButton reacts to parent hover -->
-  <article class="card group">
+  <article ref="cardRef" class="card group">
     <div class="card-top">
       <h3>{{ service.title }}</h3>
       <ArrowButton to="#kontakt" aria-label="Anfragen" />
@@ -26,7 +33,7 @@ defineProps<{
           />
         </div>
       </div>
-      <DotMatrix v-bind="service.matrix" />
+      <DotMatrix v-bind="service.matrix" :fill="fill" />
     </div>
   </article>
 </template>

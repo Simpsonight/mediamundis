@@ -49,6 +49,17 @@ import { site } from '~/data/site'
   padding-bottom: clamp(40px, 6vh, 80px);
 }
 
+/* 9a: hero entrance */
+@keyframes heroRise {
+  from { opacity: 0; transform: translateY(24px) }
+  to { opacity: 1; transform: none }
+}
+
+@keyframes sweep {
+  from { background-position: 120% 0 }
+  to { background-position: 0 0 }
+}
+
 /* demo line 56: text-hero token */
 h1 {
   font-weight: 600;
@@ -56,14 +67,17 @@ h1 {
   line-height: 0.98;
   letter-spacing: -0.03em;
   max-width: 17ch;
+  animation: heroRise 0.8s cubic-bezier(.2,.7,.2,1) both;
 }
 
 /* demo lines 57-58: gradient fade text */
 .fade {
   background: linear-gradient(90deg, var(--color-ink) 35%, var(--color-grey-soft));
+  background-size: 200% 100%;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  animation: sweep 1.1s cubic-bezier(.2,.7,.2,1) both 200ms;
 }
 
 /* demo line 59 */
@@ -72,14 +86,26 @@ h1 {
   font-size: clamp(15px, 1.4vw, 18px);
   color: var(--color-ink-soft);
   font-weight: 500;
+  animation: heroRise 0.8s cubic-bezier(.2,.7,.2,1) both 120ms;
 }
 
-/* demo lines 170-176: reduced-motion — static hero, no sticky */
+/* demo lines 170-176: reduced-motion — static hero, no sticky; explicit final states for animations */
 @media (prefers-reduced-motion: reduce) {
   .hero {
     position: static;
     height: auto;
     min-height: 100svh;
+  }
+  /* global rule kills animations; restore expected visual state */
+  .hero-center > h1,
+  .hero-center > .hero-sub {
+    opacity: 1;
+    transform: none;
+  }
+  .fade {
+    /* reset to demo's static gradient: no sweep, no oversized tile */
+    background-size: 100% 100%;
+    background-position: 0 0;
   }
 }
 </style>
