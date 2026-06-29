@@ -67,6 +67,10 @@ const gridStyle = computed(() => ({
   background: var(--color-dot);
 }
 
+@media (max-width: 820px) {
+  .matrix { justify-self: start; width: min(280px, 80%); margin-top: 8px; }
+}
+
 /* demo lines 127-129 — mini variant */
 .mini {
   gap: 9px;

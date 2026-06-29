@@ -13,10 +13,9 @@ const rLabel = useReveal()
 
     <div class="stack">
       <ServiceCard
-        v-for="(s, i) in services"
+        v-for="s in services"
         :key="s.id"
         :service="s"
-        :index="i"
       />
     </div>
   </div>

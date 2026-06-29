@@ -22,7 +22,7 @@ const rRow = useReveal()
     >
       <a class="mail" href="mailto:hello@mediamundis.de">
         hello@mediamundis.de
-        <IconArrow variant="diag" class="mail-icon" aria-hidden="true" />
+        <IconArrow variant="right" class="mail-icon" aria-hidden="true" />
       </a>
       <BasePill to="mailto:hello@mediamundis.de" label="Projekt anfragen" />
     </div>

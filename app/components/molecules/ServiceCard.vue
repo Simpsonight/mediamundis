@@ -3,7 +3,6 @@ import type { Service } from '~/data/types'
 
 const props = defineProps<{
   service: Service
-  index: number
 }>()
 
 const cardRef = ref<HTMLElement | null>(null)
