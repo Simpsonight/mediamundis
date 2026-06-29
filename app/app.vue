@@ -2,7 +2,7 @@
 useSeoMeta({
   titleTemplate: '%s · mediamundis',
   // Standard-Fallback-Beschreibung; wird auf Seiten mit eigener Beschreibung überschrieben
-  description: 'mediamundis – Kommunikation, die wirkt. Wir gestalten digitale Auftritte mit Haltung.',
+  description: 'mediamundis — Software-Manufaktur aus dem Rheinland. Development, Consulting und KI in Produktion für Unternehmen, die den Maßstab setzen.',
   ogType: 'website',
   ogSiteName: 'mediamundis',
   ogLocale: 'de_DE',
@@ -13,7 +13,10 @@ useSchemaOrg([
   defineOrganization({
     name: 'mediamundis',
     url: 'https://www.mediamundis.de',
-    // logo: '/og/logo.png', // in Konzeptphase ergänzen
+    logo: 'https://www.mediamundis.de/brand/logo.svg',
+    email: 'hello@mediamundis.de',
+    areaServed: 'Rheinland',
+    knowsAbout: ['Software Development', 'Consulting', 'Artificial Intelligence'],
   }),
   defineWebSite({ name: 'mediamundis' }),
   defineWebPage(),

@@ -1,10 +1,17 @@
 # mediamundis
 
-> mediamundis – Marketing-/Landing-Website. (Platzhalter; finalisieren in der Konzeptphase.)
+> Software-Manufaktur aus dem Rheinland — schlanke, schnelle Software für
+> Unternehmen, die den Maßstab setzen. Development, Consulting, KI in Produktion.
 
-## Seiten
-- [Startseite](https://www.mediamundis.de/): Einstieg und Überblick.
+## Leistungen
+- Software Development: von Architektur bis Betrieb — Web & API, Cloud-native, CI/CD, Plattformen.
+- Consulting: Architektur-Reviews, Tech-Due-Diligence, Team-Enablement.
+- Artificial Intelligence: LLM & RAG, Automatisierung, Evaluation, Guardrails.
+
+## Kontakt
+- E-Mail: hello@mediamundis.de — Rheinland · remote überall.
 
 ## Hinweise
 - Sprache: Deutsch.
-- Inhalt befindet sich im Aufbau.
+- Die im "Work"- und "Vertrauen von"-Bereich gezeigten Projekte und Marken sind
+  derzeit Platzhalter und werden durch echte Referenzen ersetzt.
