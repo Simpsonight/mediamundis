@@ -65,6 +65,7 @@ const gridStyle = computed(() => ({
   aspect-ratio: 1;
   border-radius: 50%;
   background: var(--color-dot);
+  transition: background-color 0.35s var(--ease-brand);
 }
 
 @media (max-width: 820px) {

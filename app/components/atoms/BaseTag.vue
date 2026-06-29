@@ -17,6 +17,6 @@ defineProps<{
   color: var(--color-ink-soft);
   border: 1px solid var(--color-line);
   padding: 6px 13px;
-  background: #FBFBFB;
+  background: var(--color-tag);
 }
 </style>

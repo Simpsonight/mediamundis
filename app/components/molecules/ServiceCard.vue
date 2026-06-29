@@ -47,6 +47,13 @@ const fill = computed(() =>
   margin-bottom: 26px;
   overflow: hidden;
   box-shadow: 0 10px 40px -24px rgba(20, 22, 26, 0.30);
+  transition: border-color 0.3s var(--ease-brand), transform 0.35s var(--ease-brand), box-shadow 0.35s var(--ease-brand);
+}
+
+.card:hover {
+  border-color: var(--color-ink);
+  transform: translateY(-2px);
+  box-shadow: 0 18px 50px -28px rgba(20, 22, 26, 0.40);
 }
 
 .card-top {
