@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { works } from '~/app/data/works'
+import { works } from '~/data/works'
 
 // One reveal per element — called at top level of setup (not in loops)
 const rLabel = useReveal()

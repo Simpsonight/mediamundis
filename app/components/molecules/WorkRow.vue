@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Work } from '~/app/data/types'
+import type { Work } from '~/data/types'
 
 defineProps<{
   work: Work

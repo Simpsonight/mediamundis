@@ -7,6 +7,12 @@ export default defineNuxtConfig({
 
   modules: ['@nuxt/eslint', '@nuxt/fonts', '@nuxt/image', '@nuxtjs/seo'],
 
+  // Disable folder-name path prefixes so components can be used by bare name
+  // (e.g. <HeroSection /> instead of <OrganismsHeroSection />)
+  components: [
+    { path: '~/components', pathPrefix: false },
+  ],
+
   css: ['~/assets/css/main.css'],
 
   vite: {

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { services } from '~/app/data/services'
+import { services } from '~/data/services'
 
 const rLabel = useReveal()
 </script>

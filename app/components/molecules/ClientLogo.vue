@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Client, ClientMark } from '~/app/data/types'
+import type { Client, ClientMark } from '~/data/types'
 
 defineProps<{
   client: Client

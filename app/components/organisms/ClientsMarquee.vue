@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { clients } from '~/app/data/clients'
+import { clients } from '~/data/clients'
 </script>
 
 <template>

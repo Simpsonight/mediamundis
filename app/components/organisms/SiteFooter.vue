@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { site } from '~/app/data/site'
+import { site } from '~/data/site'
 
 const year = useCurrentYear()
 </script>

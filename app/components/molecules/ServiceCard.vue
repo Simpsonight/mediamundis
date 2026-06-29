@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Service } from '~/app/data/types'
+import type { Service } from '~/data/types'
 
 defineProps<{
   service: Service

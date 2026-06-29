@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { NavLink } from '~/app/data/types'
+import type { NavLink } from '~/data/types'
 
 defineProps<{
   links: NavLink[]
