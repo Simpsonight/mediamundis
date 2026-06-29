@@ -42,12 +42,20 @@ import { site } from '~/data/site'
   text-decoration: none;
   border-bottom: 1.5px solid var(--color-ink);
   padding-bottom: 1px;
-  transition: color 0.2s, border-color 0.2s;
   color: inherit;
+  /* soft orange wash via background-size — wrap-safe with box-decoration-break */
+  background-image: linear-gradient(
+    color-mix(in srgb, var(--color-orange) 12%, transparent),
+    color-mix(in srgb, var(--color-orange) 12%, transparent));
+  background-repeat: no-repeat;
+  background-size: 0% 100%;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  transition: background-size 0.35s var(--ease-brand), color 0.2s var(--ease-brand), border-color 0.2s var(--ease-brand);
 }
 
 .primary :deep(a:hover) {
-  color: var(--color-orange);
+  background-size: 100% 100%;
   border-color: var(--color-orange);
 }
 

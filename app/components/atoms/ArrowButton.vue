@@ -37,7 +37,7 @@ defineProps<{
   place-items: center;
   color: #fff;
   text-decoration: none;
-  transition: background 0.25s, transform 0.35s;
+  transition: background 0.3s var(--ease-brand), transform 0.3s var(--ease-brand);
 }
 .arrow-icon {
   width: 42%;

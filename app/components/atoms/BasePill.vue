@@ -25,7 +25,7 @@ defineProps<{
   font-size: 14px;
   font-weight: 500;
   text-decoration: none;
-  transition: background 0.25s, transform 0.25s;
+  transition: background 0.25s var(--ease-brand), transform 0.25s var(--ease-brand);
   white-space: nowrap;
 }
 .pill-icon {

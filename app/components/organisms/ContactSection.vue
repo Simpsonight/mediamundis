@@ -72,7 +72,7 @@ h2 {
   letter-spacing: -0.02em;
   border-bottom: 3px solid var(--color-orange);
   padding-bottom: 4px;
-  transition: gap 0.3s;
+  transition: gap 0.3s var(--ease-brand);
 }
 
 .mail:hover {
