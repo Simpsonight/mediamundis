@@ -130,7 +130,7 @@ const cells = computed(() => {
 </template>
 
 <style scoped>
-/* demo lines 102-104 — matrix variant */
+/* matrix variant */
 .dot-grid {
   display: grid;
 }
@@ -166,7 +166,7 @@ const cells = computed(() => {
   .matrix { justify-self: start; width: min(300px, 84%); margin-top: 8px; }
 }
 
-/* demo lines 127-129 — mini variant */
+/* mini variant */
 .mini {
   gap: 9px;
   width: 62%;

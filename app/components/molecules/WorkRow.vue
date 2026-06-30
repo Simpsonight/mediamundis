@@ -26,7 +26,6 @@ defineProps<{
 </template>
 
 <style scoped>
-/* demo lines 116-137 */
 .work-row {
   display: grid;
   grid-template-columns: 1fr auto;
@@ -53,7 +52,7 @@ defineProps<{
   font-weight: 600;
 }
 
-/* demo lines 119-121: text-work-title token */
+/* text-work-title token */
 h3 {
   font-weight: 600;
   font-size: var(--text-work-title);
@@ -110,7 +109,7 @@ p {
   transition: border-color 0.3s, transform 0.35s;
 }
 
-/* hover mechanics — demo lines 130-132 */
+/* hover mechanics */
 .work-row:hover h3 {
   transform: translateX(8px);
 }

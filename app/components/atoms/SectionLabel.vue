@@ -12,7 +12,6 @@ defineProps<{
 </template>
 
 <style scoped>
-/* demo lines 78-80 */
 .seclabel {
   display: flex;
   align-items: center;

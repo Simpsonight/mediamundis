@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { site } from '~/data/site'
 
-// Fortschritt der Section (0..1) treibt den Develop-Effekt des Portraits.
-// Gemessen an der Section, weil das Portrait auf Desktop gepinnt ist.
+// Section progress (0..1) drives the portrait's develop effect.
+// Measured on the section because the portrait is pinned on desktop.
 const section = ref<HTMLElement | null>(null)
 const progress = usePinProgress(section)
 </script>
@@ -22,7 +22,7 @@ const progress = usePinProgress(section)
 </template>
 
 <style scoped>
-/* Basis = Mobile: gestapelt, im Gutter */
+/* Base = mobile: stacked, within the gutter */
 .lead {
   padding-block: var(--space-xl) var(--space-2xs);
   padding-inline: var(--gutter);
@@ -33,7 +33,7 @@ const progress = usePinProgress(section)
   gap: clamp(28px, 5vw, 72px);
 }
 
-/* Mobile: Banner sitzt straffer oben, Text klar darunter */
+/* Mobile: banner sits tighter at the top, text clearly below */
 @media (max-width: 820px) {
   .lead {
     padding-top: var(--space-lg);
@@ -43,8 +43,8 @@ const progress = usePinProgress(section)
   }
 }
 
-/* Desktop: volle Viewport-Bühne, Portrait blutet links & ist gepinnt,
-   Text rechts vertikal zentriert, rechte Kante auf der Content-Gutter-Linie */
+/* Desktop: full-viewport stage, portrait bleeds left and is pinned,
+   text right-side vertically centered, right edge on the content gutter line */
 @media (min-width: 821px) {
   .lead {
     padding: 0;
@@ -53,21 +53,21 @@ const progress = usePinProgress(section)
   .lead-grid {
     min-height: 100vh;
     grid-template-columns:
-      minmax(0, 1fr)                                       /* Portrait, blutet links */
-      minmax(auto, 46ch)                                   /* Text */
-      max(var(--gutter), calc((100vw - var(--maxw)) / 2)); /* rechter Gutter = wrap-Kante */
+      minmax(0, 1fr)                                       /* portrait, bleeds left */
+      minmax(auto, 46ch)                                   /* text */
+      max(var(--gutter), calc((100vw - var(--maxw)) / 2)); /* right gutter = wrap boundary */
     column-gap: clamp(32px, 5vw, 80px);
   }
   .lead-portrait {
-    align-self: stretch;   /* Zelle volle Höhe → Sticky-Reise */
+    align-self: stretch;   /* cell full height — sticky travel */
   }
   .lead-text {
-    align-self: center;    /* vertikal zentriert */
+    align-self: center;    /* vertically centered */
     max-width: 46ch;
   }
 }
 
-/* demo line 72: first paragraph (primary HTML) — intro voice: larger + medium weight */
+/* first paragraph (primary HTML) — intro voice: larger + medium weight */
 .primary {
   font-size: clamp(20px, 1.9vw, 28px);
   font-weight: 500;
@@ -76,7 +76,7 @@ const progress = usePinProgress(section)
   max-width: 34ch;
 }
 
-/* demo lines 73-74: inline links inside v-html — :deep() required */
+/* inline links inside v-html — :deep() required */
 .primary :deep(a) {
   text-decoration: none;
   border-bottom: 1.5px solid var(--color-ink);
@@ -98,7 +98,7 @@ const progress = usePinProgress(section)
   border-color: var(--color-orange);
 }
 
-/* demo line 75: second paragraph (secondary plain text) */
+/* second paragraph (secondary plain text) */
 .secondary {
   margin-top: 24px;
   color: var(--color-ink-soft);

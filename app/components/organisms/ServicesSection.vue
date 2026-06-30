@@ -22,9 +22,7 @@ const rLabel = useReveal()
 </template>
 
 <style scoped>
-/* demo lines 214-264 */
-
-/* demo lines 83-89: stacking sticky service cards */
+/* stacking sticky service cards */
 /* position:sticky is set here (section owns the behavior); :deep() pierces component boundary */
 :deep(.card) {
   position: sticky;
@@ -42,7 +40,7 @@ const rLabel = useReveal()
   top: calc(var(--navh) + 64px);
 }
 
-/* demo line 108: mobile — all cards same top */
+/* mobile — all cards same top */
 @media (max-width: 820px) {
   .stack :deep(.card:nth-child(1)),
   .stack :deep(.card:nth-child(2)),

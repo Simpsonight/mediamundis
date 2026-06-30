@@ -4,10 +4,9 @@ const rRow = useReveal()
 </script>
 
 <template>
-  <!-- demo lines 154-166, 320-332 -->
   <section id="kontakt" class="contact">
     <div class="wrap">
-      <!-- Contact headline with reveal — demo line 155 + text-contact token -->
+      <!-- Contact headline with reveal — text-contact token -->
       <h2
         :ref="rH2.el"
         :class="{ reveal: true, in: rH2.shown }"
@@ -15,7 +14,7 @@ const rRow = useReveal()
         Lass uns etwas<br><span class="g">bauen.</span>
       </h2>
 
-      <!-- CTA row with reveal — demo lines 157-162 -->
+      <!-- CTA row with reveal -->
       <div
         :ref="rRow.el"
         class="row"
@@ -34,13 +33,12 @@ const rRow = useReveal()
 </template>
 
 <style scoped>
-/* demo lines 154-166, 320-332 */
 .contact {
   /* vertical only — horizontal gutter comes from the inner .wrap and SiteFooter */
   padding-block: var(--space-2xl) var(--space-lg);
 }
 
-/* demo line 155: text-contact token */
+/* text-contact token */
 h2 {
   font-weight: 600;
   font-size: var(--text-contact);
@@ -49,12 +47,12 @@ h2 {
   text-wrap: balance;
 }
 
-/* demo line 156: grey accent */
+/* grey accent */
 .g {
   color: var(--color-grey);
 }
 
-/* demo line 157: row layout */
+/* row layout */
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -63,7 +61,7 @@ h2 {
   margin-top: clamp(34px, 5vw, 56px);
 }
 
-/* demo lines 158-162: mail link with orange underline + gap-grows-on-hover */
+/* mail link with orange underline + gap-grows-on-hover */
 .mail {
   display: inline-flex;
   align-items: center;

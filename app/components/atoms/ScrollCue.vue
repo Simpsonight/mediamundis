@@ -6,7 +6,6 @@
 </template>
 
 <style scoped>
-/* demo lines 60-65 */
 .scroll-cue {
   position: absolute;
   left: var(--gutter);

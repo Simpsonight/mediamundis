@@ -5,7 +5,7 @@ defineProps<{
   client: Client
 }>()
 
-// Static SVG marks copied verbatim from demo lines 353-360
+// Static SVG marks (trusted constant strings)
 const marks: Record<ClientMark, string> = {
   ringo: '<svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="14" stroke="currentColor" stroke-width="3"/><circle cx="20" cy="20" r="4" fill="currentColor"/></svg>',
   veltra: '<svg viewBox="0 0 40 40" fill="none"><path d="M6 8 20 32 34 8" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/></svg>',
@@ -19,7 +19,6 @@ const marks: Record<ClientMark, string> = {
 </script>
 
 <template>
-  <!-- demo lines 149-152 -->
   <div class="logo-item">
     <!-- SVG mark via v-html; trusted static strings — no user input. aria-hidden because name span labels it -->
     <!-- eslint-disable-next-line vue/no-v-html -->
@@ -29,7 +28,6 @@ const marks: Record<ClientMark, string> = {
 </template>
 
 <style scoped>
-/* demo lines 149-152 */
 .logo-item {
   flex: none;
   display: flex;
@@ -50,7 +48,7 @@ const marks: Record<ClientMark, string> = {
   flex: none;
 }
 
-/* demo line 152: text-logo token */
+/* text-logo token */
 .logo-name {
   font-size: var(--text-logo);
   font-weight: 700;

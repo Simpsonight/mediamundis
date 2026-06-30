@@ -22,7 +22,6 @@ const pillStyle = computed(() => ({
 </template>
 
 <style scoped>
-/* demo lines 42-46 */
 .pill {
   display: inline-flex;
   align-items: center;

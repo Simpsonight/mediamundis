@@ -11,7 +11,6 @@ defineProps<{
 </template>
 
 <style scoped>
-/* demo line 101 */
 .tag {
   font-size: 13px;
   color: var(--color-ink-soft);

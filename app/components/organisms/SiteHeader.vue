@@ -11,7 +11,6 @@ const scrolled = useScrolled()
 </template>
 
 <style scoped>
-/* demo lines 26-47, 181-191 */
 nav {
   position: fixed;
   top: 0;

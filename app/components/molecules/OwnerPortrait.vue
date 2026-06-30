@@ -2,9 +2,9 @@
 import { useMediaQuery } from '@vueuse/core'
 
 const props = defineProps<{
-  // 0..1 Scroll-Fortschritt der Section; auf Desktop ist das Portrait gepinnt,
-  // daher kommt der Fortschritt von außen. Auf Mobile (nicht gepinnt) misst die
-  // Komponente am eigenen Element — das ergibt dort den sauberen blass→voll→blass.
+  // 0..1 scroll progress of the section; on desktop the portrait is pinned so
+  // progress is passed in from outside. On mobile (not pinned) the component
+  // measures its own element — giving the clean pale→full→pale bell there.
   progress?: number
 }>()
 
@@ -16,8 +16,8 @@ const p = computed(() =>
   isDesktop.value && props.progress != null ? props.progress : selfProgress.value,
 )
 
-// Glockenkurve: blass beim Eintreten → voll in Bildmitte → wieder blass.
-// Smoothstep für kräftigeren Übergang. Reduced motion: statisch voll.
+// Bell curve: pale on entry → full at center → pale again.
+// Smoothstep for a stronger transition. Reduced motion: statically full.
 const WIDTH = 0.45
 const dev = computed(() => {
   if (reduced.value) return 1
@@ -40,24 +40,24 @@ const dev = computed(() => {
 
 <style scoped>
 .portrait {
-  /* blasser Ausgangston, damit das Reinentwickeln deutlich auffällt */
+  /* pale base tone so the develop-in effect is clearly visible */
   --portrait-pale: color-mix(in srgb, var(--color-grey-soft) 70%, #fff);
 
   position: relative;
   margin: 0;
   width: 100%;
   max-width: 380px;
-  aspect-ratio: 2679.64 / 3037.39;   /* Hochformat des SVG halten */
+  aspect-ratio: 2679.64 / 3037.39;   /* keep the SVG's portrait aspect ratio */
   justify-self: center;
   align-self: center;
 
-  /* SVG als Maske → Punkte = Farbe dieses Elements (+ Ink-Ebene) */
+  /* SVG as mask — dots inherit this element's color (+ ink layer) */
   background-color: var(--portrait-pale);
   -webkit-mask: url(/simon-kemmerling.svg) center / contain no-repeat;
   mask: url(/simon-kemmerling.svg) center / contain no-repeat;
 }
 
-/* Ink-Ebene: per opacity eingeblendet → Compositor, kein Repaint der Fläche */
+/* Ink layer: faded in via opacity — compositor-only, no repaint of the surface */
 .portrait .ink {
   position: absolute;
   inset: 0;
@@ -65,10 +65,10 @@ const dev = computed(() => {
   opacity: var(--dev, 0);
 }
 
-/* Desktop: großes, kopfdominantes, links blutendes, gepinntes Portrait */
+/* Desktop: large, head-dominant, left-bleeding, pinned portrait */
 @media (min-width: 821px) {
   .portrait {
-    /* Luft zwischen Header und Portrait-Oberkante */
+    /* gap between header and portrait top edge */
     --portrait-top-gap: var(--space-lg);
 
     position: sticky;
@@ -79,17 +79,17 @@ const dev = computed(() => {
     aspect-ratio: auto;
     align-self: stretch;
 
-    /* Kopf groß & beschnitten, links bündig (Bleed) */
+    /* head large and cropped, aligned left (bleed) */
     -webkit-mask: url(/simon-kemmerling.svg) left top / auto 135% no-repeat;
     mask: url(/simon-kemmerling.svg) left top / auto 135% no-repeat;
   }
 }
 
-/* Mobile: vollbreites, kopfdominantes Banner (edge-to-edge), Text darunter */
+/* Mobile: full-width, head-dominant banner (edge-to-edge), text below */
 @media (max-width: 820px) {
   .portrait {
-    justify-self: stretch;                     /* Grid-Item füllt den Track */
-    margin-inline: calc(-1 * var(--gutter));   /* randlos bis zum Viewport-Rand */
+    justify-self: stretch;                     /* grid item fills the track */
+    margin-inline: calc(-1 * var(--gutter));   /* flush to viewport edge */
     width: auto;
     max-width: none;
     height: 40vh;

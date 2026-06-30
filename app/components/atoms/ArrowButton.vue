@@ -26,7 +26,6 @@ defineProps<{
 </template>
 
 <style scoped>
-/* demo lines 92-96 */
 .arrow-btn {
   flex: none;
   width: clamp(52px, 5vw, 72px);

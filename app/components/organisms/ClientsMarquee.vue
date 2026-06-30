@@ -3,7 +3,6 @@ import { clients } from '~/data/clients'
 </script>
 
 <template>
-  <!-- demo lines 139-152, 314-317 -->
   <div class="clients">
     <!-- Label is visible and readable by AT -->
     <p class="lbl">Vertrauen von</p>
@@ -21,7 +20,6 @@ import { clients } from '~/data/clients'
 </template>
 
 <style scoped>
-/* demo lines 139-152 */
 .clients {
   padding: var(--space-lg) 0 0;
 }
@@ -35,7 +33,7 @@ import { clients } from '~/data/clients'
   margin-bottom: 26px;
 }
 
-/* demo lines 142-144: overflow + edge mask */
+/* overflow + edge mask */
 .marquee {
   position: relative;
   overflow: hidden;
@@ -43,7 +41,7 @@ import { clients } from '~/data/clients'
   mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
 }
 
-/* demo lines 145-148: infinite scrolling track */
+/* infinite scrolling track */
 .marquee-track {
   display: flex;
   align-items: center;

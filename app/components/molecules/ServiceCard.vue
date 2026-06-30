@@ -47,7 +47,7 @@ const display = computed(() =>
 </template>
 
 <style scoped>
-/* demo lines 84-109: card visual styles — position:sticky + top are set by parent (ServicesSection) */
+/* card visual styles — position:sticky + top are set by parent (ServicesSection) */
 .card {
   background: var(--color-card);
   border: 1px solid var(--color-line);
@@ -72,7 +72,7 @@ const display = computed(() =>
   gap: 20px;
 }
 
-/* demo line 91: text-card-title token */
+/* text-card-title token */
 .card h3 {
   font-weight: 600;
   font-size: var(--text-card-title);
@@ -82,14 +82,12 @@ const display = computed(() =>
   text-wrap: balance;
 }
 
-/* demo line 97 */
 .card-rule {
   height: 1px;
   background: var(--color-line);
   margin: clamp(20px, 2.4vw, 30px) 0;
 }
 
-/* demo lines 98-100 */
 .card-body {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
@@ -97,7 +95,7 @@ const display = computed(() =>
   align-items: end;
 }
 
-/* demo line 99: text-card-body token */
+/* text-card-body token */
 .card-body p {
   font-size: var(--text-card-body);
   line-height: 1.32;
@@ -106,7 +104,6 @@ const display = computed(() =>
   font-weight: 500;
 }
 
-/* demo line 100-101 */
 .card-tags {
   margin-top: 22px;
   display: flex;

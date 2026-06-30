@@ -61,7 +61,6 @@ onBeforeUnmount(() => cancelAnimationFrame(raf))
 </template>
 
 <style scoped>
-/* demo lines 49-65, 193-200 */
 .hero {
   position: sticky;
   top: 0;
@@ -110,7 +109,7 @@ onBeforeUnmount(() => cancelAnimationFrame(raf))
   animation: heroRise 0.8s cubic-bezier(.2,.7,.2,1) both;
 }
 
-/* demo line 56: text-hero token — shared by h1 and the spotlight clone */
+/* text-hero token — shared by h1 and the spotlight clone */
 .hl {
   font-weight: 600;
   font-size: var(--text-hero);
@@ -120,7 +119,7 @@ onBeforeUnmount(() => cancelAnimationFrame(raf))
   text-wrap: balance;
 }
 
-/* demo lines 57-58: gradient fade text — resting size 100% so ink fills 35%, grey-soft fills 65% */
+/* gradient fade text — resting size 100% so ink fills 35%, grey-soft fills 65% */
 .fade {
   background: linear-gradient(90deg, var(--color-ink) 35%, var(--color-grey-soft));
   background-size: 100% 100%;
@@ -141,7 +140,6 @@ onBeforeUnmount(() => cancelAnimationFrame(raf))
   mask-image: radial-gradient(circle 120px at var(--mx, -9999px) var(--my, -9999px), #000 0%, #000 58%, transparent 100%);
 }
 
-/* demo line 59 */
 .hero-sub {
   margin-top: clamp(18px, 2.4vw, 30px);
   font-size: clamp(15px, 1.4vw, 18px);
@@ -165,7 +163,7 @@ onBeforeUnmount(() => cancelAnimationFrame(raf))
   }
 }
 
-/* demo lines 170-176: reduced-motion — static hero, no sticky; explicit final states for animations */
+/* reduced-motion — static hero, no sticky; explicit final states for animations */
 @media (prefers-reduced-motion: reduce) {
   .hero {
     position: static;

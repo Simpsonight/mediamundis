@@ -13,14 +13,13 @@ const rRows = [rRow0, rRow1, rRow2, rRow3]
 </script>
 
 <template>
-  <!-- demo lines 266-318 -->
   <div id="work" class="wrap">
     <!-- Section label with reveal -->
     <div :ref="rLabel.el" :class="{ reveal: true, in: rLabel.shown }">
       <SectionLabel title="Work" />
     </div>
 
-    <!-- Work intro headline with reveal — demo lines 112-114 -->
+    <!-- Work intro headline with reveal -->
     <p
       :ref="rIntro.el"
       class="work-intro"
@@ -46,9 +45,7 @@ const rRows = [rRow0, rRow1, rRow2, rRow3]
 </template>
 
 <style scoped>
-/* demo lines 266-318 */
-
-/* demo lines 112-114: large work-intro headline */
+/* large work-intro headline */
 .work-intro {
   font-weight: 600;
   font-size: var(--text-work-intro);
@@ -59,12 +56,12 @@ const rRows = [rRow0, rRow1, rRow2, rRow3]
   margin: var(--space-sm) 0 var(--space-md);
 }
 
-/* demo line 114: grey accent on "zufriedene Kunden." */
+/* grey accent on "zufriedene Kunden." */
 .g {
   color: var(--color-grey);
 }
 
-/* demo line 115: top border on work list */
+/* top border on work list */
 .work-list {
   border-top: 1px solid var(--color-line);
 }

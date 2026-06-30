@@ -1,14 +1,14 @@
 <script setup lang="ts">
 useSeoMeta({
   titleTemplate: '%s · mediamundis',
-  // Standard-Fallback-Beschreibung; wird auf Seiten mit eigener Beschreibung überschrieben
+  // Default fallback description; overridden on pages with their own description
   description: 'mediamundis — Software-Manufaktur aus dem Rheinland. Development, Consulting und KI in Produktion für Unternehmen, die den Maßstab setzen.',
   ogType: 'website',
   ogSiteName: 'mediamundis',
   ogLocale: 'de_DE',
 });
 
-// Schema.org-Identität (GEO: maschinenlesbare Entität für generative Engines)
+// Schema.org identity (GEO: machine-readable entity for generative engines)
 useSchemaOrg([
   defineOrganization({
     name: 'mediamundis',
