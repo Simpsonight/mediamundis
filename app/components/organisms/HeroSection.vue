@@ -1,17 +1,10 @@
 <script setup lang="ts">
-import { useWindowScroll } from '@vueuse/core'
 import { site } from '~/data/site'
-
-const { y } = useWindowScroll()
-const reduced = useReducedMotion()
-const dotStyle = computed(() =>
-  reduced.value ? {} : { transform: `translateY(${Math.min(y.value * 0.12, 64)}px)` }
-)
 </script>
 
 <template>
   <header id="top" class="hero">
-    <div class="dotgrid" aria-hidden="true" :style="dotStyle" />
+    <HeroDotField />
     <div class="hero-center wrap">
       <h1>{{ site.hero.lead }}<span class="fade">{{ site.hero.faded }}</span></h1>
       <p class="hero-sub">{{ site.hero.sub }}</p>
@@ -30,19 +23,6 @@ const dotStyle = computed(() =>
   display: flex;
   flex-direction: column;
   overflow: hidden;
-}
-
-/* demo lines 51-53: dot grid with radial-gradient + mask */
-.dotgrid {
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(var(--color-grey-soft) 1px, transparent 1.4px);
-  background-size: 22px 22px;
-  -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 40%, transparent 72%);
-  mask-image: linear-gradient(180deg, #000 0%, #000 40%, transparent 72%);
-  opacity: 0.6;
-  pointer-events: none;
-  z-index: 0;
 }
 
 .hero-center {
