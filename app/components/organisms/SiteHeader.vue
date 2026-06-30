@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { site } from '~/data/site'
-
 const scrolled = useScrolled()
 </script>
 
@@ -8,9 +6,7 @@ const scrolled = useScrolled()
   <nav id="nav" :class="{ scrolled }">
     <AppLogo />
     <span class="nav-spacer" aria-hidden="true" />
-    <NavLinks :links="site.navLinks" />
-    <NavGreeting />
-    <BasePill to="#kontakt" label="Kontakt" />
+    <MenuToggle />
   </nav>
 </template>
 
@@ -38,23 +34,7 @@ nav.scrolled {
   border-bottom-color: var(--color-line);
 }
 
-
-.dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--color-orange);
-  flex: none;
-}
-
 .nav-spacer {
   flex: 1;
-}
-
-/* demo line 47: hide sub-note + nav + greet on mobile */
-@media (max-width: 760px) {
-  .sub-note { display: none; }
-  :deep(.nav-links) { display: none; }
-  :deep(.greet) { display: none; }
 }
 </style>

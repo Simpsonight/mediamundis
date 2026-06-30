@@ -25,6 +25,7 @@
   --text-lead: clamp(18px, 1.7vw, 25px);
   --text-lead-soft: clamp(15px, 1.3vw, 18px);
   --text-logo: clamp(18px, 1.9vw, 25px);
+  --text-menu: clamp(40px, 8vw, 104px);
 
   /* motion */
   --ease-brand: cubic-bezier(0.2, 0.7, 0.2, 1);
