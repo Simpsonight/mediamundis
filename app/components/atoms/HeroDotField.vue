@@ -17,7 +17,7 @@ const props = withDefaults(defineProps<{
   maxScale?: number
   displace?: number
 }>(), {
-  spacing: 26,
+  spacing: 14,
   radius: 1.1,
   restAlpha: 0.6,
   parallax: 0.12,

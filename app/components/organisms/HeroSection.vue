@@ -1,12 +1,59 @@
 <script setup lang="ts">
+import { useEventListener, useMediaQuery } from '@vueuse/core'
 import { site } from '~/data/site'
+
+// Cursor "light": tints the headline orange within the same radius as the
+// dot-field lens, so the type and the dots react to one shared moving light.
+const headline = ref<HTMLElement | null>(null)
+const finePointer = useMediaQuery('(pointer: fine)')
+const reduced = useReducedMotion()
+
+// The orange spotlight clone is rendered client-only on fine pointers, so the
+// prerendered HTML keeps a single <h1> (no SEO duplication) and touch/reduced
+// devices never mount the effect at all.
+const mounted = ref(false)
+onMounted(() => { mounted.value = true })
+const enhance = computed(() => mounted.value && finePointer.value && !reduced.value)
+
+let raf = 0
+let queued = false
+let cx = 0
+let cy = 0
+const SPOT_MARGIN = 140 // keep the mask live a bit beyond the text box
+
+function apply() {
+  queued = false
+  const el = headline.value
+  if (!el) return
+  const rect = el.getBoundingClientRect()
+  const mx = cx - rect.left
+  const my = cy - rect.top
+  const off = mx < -SPOT_MARGIN || mx > rect.width + SPOT_MARGIN
+    || my < -SPOT_MARGIN || my > rect.height + SPOT_MARGIN
+  el.style.setProperty('--mx', off ? '-9999px' : `${mx}px`)
+  el.style.setProperty('--my', off ? '-9999px' : `${my}px`)
+}
+function onMove(e: PointerEvent) {
+  if (!finePointer.value || reduced.value) return
+  cx = e.clientX
+  cy = e.clientY
+  if (queued) return
+  queued = true
+  raf = requestAnimationFrame(apply)
+}
+useEventListener(window, 'pointermove', onMove)
+onBeforeUnmount(() => cancelAnimationFrame(raf))
 </script>
 
 <template>
   <header id="top" class="hero">
     <HeroDotField />
     <div class="hero-center wrap">
-      <h1>{{ site.hero.lead }}<span class="fade">{{ site.hero.faded }}</span></h1>
+      <div ref="headline" class="headline">
+        <h1 class="hl">{{ site.hero.lead }}<span class="fade">{{ site.hero.faded }}</span></h1>
+        <!-- orange duplicate (client-only, desktop-only), revealed through the cursor spotlight mask -->
+        <div v-if="enhance" class="hl spot" aria-hidden="true">{{ site.hero.lead }}<span>{{ site.hero.faded }}</span></div>
+      </div>
       <p class="hero-sub">{{ site.hero.sub }}</p>
     </div>
     <ScrollCue />
@@ -57,15 +104,20 @@ import { site } from '~/data/site'
   }
 }
 
-/* demo line 56: text-hero token */
-h1 {
+/* headline stack: real h1 + orange spotlight clone share one box so they stay aligned */
+.headline {
+  position: relative;
+  animation: heroRise 0.8s cubic-bezier(.2,.7,.2,1) both;
+}
+
+/* demo line 56: text-hero token — shared by h1 and the spotlight clone */
+.hl {
   font-weight: 600;
   font-size: var(--text-hero);
   line-height: 0.98;
   letter-spacing: -0.03em;
   max-width: 17ch;
   text-wrap: balance;
-  animation: heroRise 0.8s cubic-bezier(.2,.7,.2,1) both;
 }
 
 /* demo lines 57-58: gradient fade text — resting size 100% so ink fills 35%, grey-soft fills 65% */
@@ -76,6 +128,17 @@ h1 {
   background-clip: text;
   color: transparent;
   animation: sweep 1.1s cubic-bezier(.2,.7,.2,1) both 200ms;
+}
+
+/* orange clone, revealed only inside the cursor radius (matches dot-field lens ~120px) */
+.spot {
+  position: absolute;
+  inset: 0;
+  color: var(--color-orange);
+  -webkit-text-fill-color: var(--color-orange);
+  pointer-events: none;
+  -webkit-mask-image: radial-gradient(circle 120px at var(--mx, -9999px) var(--my, -9999px), #000 0%, #000 58%, transparent 100%);
+  mask-image: radial-gradient(circle 120px at var(--mx, -9999px) var(--my, -9999px), #000 0%, #000 58%, transparent 100%);
 }
 
 /* demo line 59 */
@@ -95,11 +158,13 @@ h1 {
     min-height: 100svh;
   }
   /* global rule kills animations; restore expected visual state */
-  .hero-center > h1,
+  .headline,
   .hero-center > .hero-sub {
     opacity: 1;
     transform: none;
   }
+  /* no cursor spotlight without motion */
+  .spot { display: none; }
   .fade {
     /* reset to demo's static gradient: no sweep, no oversized tile */
     background-size: 100% 100%;
