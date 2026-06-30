@@ -150,6 +150,21 @@ onBeforeUnmount(() => cancelAnimationFrame(raf))
   animation: heroRise 0.8s cubic-bezier(.2,.7,.2,1) both 120ms;
 }
 
+/* phones: top-align the headline (no dead-centre float) and let the hero be
+   shorter than the viewport so the next section peeks → clear scroll affordance */
+@media (max-width: 640px) {
+  .hero {
+    height: auto;
+    min-height: 82svh;
+  }
+  .hero-center {
+    flex: none;
+    justify-content: flex-start;
+    padding-top: calc(var(--navh) + clamp(20px, 7vh, 52px));
+    padding-bottom: clamp(36px, 9vh, 72px);
+  }
+}
+
 /* demo lines 170-176: reduced-motion — static hero, no sticky; explicit final states for animations */
 @media (prefers-reduced-motion: reduce) {
   .hero {
