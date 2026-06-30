@@ -30,7 +30,7 @@ nav {
   align-items: center;
   gap: 24px;
   height: var(--navh);
-  padding: 0 clamp(20px, 4vw, 56px);
+  padding: 0 var(--gutter);
   background: rgba(255, 255, 255, 0);
   border-bottom: 1px solid transparent;
   transition: background 0.3s, border-color 0.3s, backdrop-filter 0.3s;

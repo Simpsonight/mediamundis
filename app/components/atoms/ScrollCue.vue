@@ -9,7 +9,7 @@
 /* demo lines 60-65 */
 .scroll-cue {
   position: absolute;
-  left: clamp(20px, 4vw, 56px);
+  left: var(--gutter);
   bottom: clamp(20px, 4vh, 40px);
   z-index: 2;
   display: flex;

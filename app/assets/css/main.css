@@ -45,6 +45,7 @@
 :root {
   --maxw: 1320px;
   --navh: 62px;
+  --gutter: clamp(24px, 5vw, 56px);
 }
 
 @layer base {
@@ -66,7 +67,7 @@
 @utility wrap {
   max-width: var(--maxw);
   margin-inline: auto;
-  padding-inline: clamp(20px, 4vw, 56px);
+  padding-inline: var(--gutter);
 }
 
 @utility content-panel {
