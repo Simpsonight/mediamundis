@@ -1,9 +1,14 @@
+export type Reveal = 'top' | 'bottom' | 'center'
+
 export interface Service {
   id: string
   title: string
   body: string
   tags: string[]
-  matrix: { cols: number; rows: number; onIndex: number }
+  /** Dot-matrix glyph as bitmap rows ('#' = icon dot, '.' = empty). */
+  glyph: string[]
+  /** Direction the glyph renders in as the card scrolls into view. */
+  reveal: Reveal
 }
 
 export interface Work {

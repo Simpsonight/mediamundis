@@ -1,15 +1,24 @@
 <script setup lang="ts">
 import type { Service } from '~/data/types'
 
-const props = defineProps<{
+defineProps<{
   service: Service
 }>()
 
 const cardRef = ref<HTMLElement | null>(null)
 const progress = usePinProgress(cardRef)
 const reduced = useReducedMotion()
-const fill = computed(() =>
-  reduced.value ? 0 : Math.round(progress.value * props.service.matrix.cols * props.service.matrix.rows)
+// Sticky cards plateau at a pin progress of ~0.5 (only the last card reaches
+// 1.0). Hold the glyph until the card is well into view (REVEAL_START), then
+// play the reveal in a tight, noticeable window that completes as it nears the
+// pin point (REVEAL_END, kept under the plateau so it always finishes).
+// reduced motion → show the finished glyph statically.
+const REVEAL_START = 0.25
+const REVEAL_END = 0.42
+const display = computed(() =>
+  reduced.value
+    ? 1
+    : Math.min(1, Math.max(0, (progress.value - REVEAL_START) / (REVEAL_END - REVEAL_START)))
 )
 </script>
 
@@ -32,7 +41,7 @@ const fill = computed(() =>
           />
         </div>
       </div>
-      <DotMatrix v-bind="service.matrix" :fill="fill" />
+      <DotMatrix :glyph="service.glyph" :reveal="service.reveal" :progress="display" />
     </div>
   </article>
 </template>
