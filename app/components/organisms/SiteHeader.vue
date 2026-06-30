@@ -7,10 +7,6 @@ const scrolled = useScrolled()
 <template>
   <nav id="nav" :class="{ scrolled }">
     <AppLogo />
-    <span class="sub-note">
-      <span class="dot" aria-hidden="true" />
-      Software · Consulting · AI
-    </span>
     <span class="nav-spacer" aria-hidden="true" />
     <NavLinks :links="site.navLinks" />
     <NavGreeting />
@@ -42,15 +38,6 @@ nav.scrolled {
   border-bottom-color: var(--color-line);
 }
 
-/* demo line 33-35 */
-.sub-note {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  font-size: 14px;
-  color: var(--color-ink-soft);
-  font-weight: 500;
-}
 
 .dot {
   width: 8px;

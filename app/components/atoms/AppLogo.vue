@@ -1,10 +1,6 @@
 <template>
-  <a href="#top" aria-label="mediamundis – Startseite" class="brand">
-    <!--
-      LOGO SWAP: when /brand/logo.svg is delivered, replace the <span> below with:
-        <img src="/brand/logo.svg" alt="mediamundis" height="24">
-    -->
-    <span class="wordmark">mediamundis</span>
+  <a href="#top" aria-label="mediamundis - Startseite" class="brand">
+    <img src="/brand/logo-mediamundis.svg" alt="mediamundis - Software Development, Consulting, AI by Simon Kemmerling" height="24">
   </a>
 </template>
 
@@ -15,6 +11,7 @@
   align-items: center;
   text-decoration: none;
   color: inherit;
+  width: 300px;
 }
 
 /* a11y focus ring */
