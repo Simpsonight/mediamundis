@@ -7,6 +7,10 @@ export const site: SiteContent = {
     { href: '#leistungen', label: 'Leistungen' },
     { href: '#work', label: 'Work' },
   ],
+  legalLinks: [
+    { href: '/impressum', label: 'Impressum' },
+    { href: '/datenschutz', label: 'Datenschutz' },
+  ],
   hero: {
     lead: 'Schlank, schnell und kompromisslos bei Qualität — mediamundis baut Software für Unternehmen, die den ',
     faded: 'Maßstab setzen.',

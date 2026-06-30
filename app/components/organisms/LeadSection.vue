@@ -19,7 +19,8 @@ import { site } from '~/data/site'
 <style scoped>
 /* demo lines 70-76, 204-212 */
 .lead {
-  padding: var(--space-xl) 0 var(--space-2xs);
+  /* vertical only — keep the wrap utility's horizontal gutter intact */
+  padding-block: var(--space-xl) var(--space-2xs);
 }
 
 .lead-grid {

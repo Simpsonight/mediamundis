@@ -5,26 +5,28 @@ const rRow = useReveal()
 
 <template>
   <!-- demo lines 154-166, 320-332 -->
-  <section id="kontakt" class="wrap contact">
-    <!-- Contact headline with reveal — demo line 155 + text-contact token -->
-    <h2
-      :ref="rH2.el"
-      :class="{ reveal: true, in: rH2.shown }"
-    >
-      Lass uns etwas<br><span class="g">bauen.</span>
-    </h2>
+  <section id="kontakt" class="contact">
+    <div class="wrap">
+      <!-- Contact headline with reveal — demo line 155 + text-contact token -->
+      <h2
+        :ref="rH2.el"
+        :class="{ reveal: true, in: rH2.shown }"
+      >
+        Lass uns etwas<br><span class="g">bauen.</span>
+      </h2>
 
-    <!-- CTA row with reveal — demo lines 157-162 -->
-    <div
-      :ref="rRow.el"
-      class="row"
-      :class="{ reveal: true, in: rRow.shown }"
-    >
-      <a class="mail" href="mailto:hello@mediamundis.de">
-        hello@mediamundis.de
-        <IconArrow variant="right" class="mail-icon" aria-hidden="true" />
-      </a>
-      <BasePill to="mailto:hello@mediamundis.de" label="Projekt anfragen" />
+      <!-- CTA row with reveal — demo lines 157-162 -->
+      <div
+        :ref="rRow.el"
+        class="row"
+        :class="{ reveal: true, in: rRow.shown }"
+      >
+        <a class="mail" href="mailto:hello@mediamundis.de">
+          hello@mediamundis.de
+          <IconArrow variant="right" class="mail-icon" aria-hidden="true" />
+        </a>
+        <BasePill to="mailto:hello@mediamundis.de" label="Projekt anfragen" />
+      </div>
     </div>
 
     <SiteFooter />
@@ -34,7 +36,8 @@ const rRow = useReveal()
 <style scoped>
 /* demo lines 154-166, 320-332 */
 .contact {
-  padding: var(--space-2xl) 0 var(--space-lg);
+  /* vertical only — horizontal gutter comes from the inner .wrap and SiteFooter */
+  padding-block: var(--space-2xl) var(--space-lg);
 }
 
 /* demo line 155: text-contact token */

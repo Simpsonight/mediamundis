@@ -41,6 +41,7 @@ export interface SiteContent {
   email: string
   location: string
   navLinks: NavLink[]
+  legalLinks: NavLink[]
   hero: {
     lead: string
     faded: string
