@@ -1,4 +1,4 @@
-import type { SiteContent } from './types'
+import type { SiteContent } from './types';
 
 export const site: SiteContent = {
   email: 'hello@mediamundis.de',
@@ -20,6 +20,6 @@ export const site: SiteContent = {
     primaryHtml:
       'Seit über zehn Jahren entwickeln wir Plattformen für <a href="#work">den Mittelstand</a>, <a href="#work">Startups</a> und <a href="#work">Konzerne</a>, beraten <a href="#leistungen">technische Teams</a> und bringen <a href="#leistungen">KI in Produktion</a>.',
     secondary:
-      'Im Rheinland zuhause, remote überall. Senior-Entwickler:innen statt Schichten — lauffähige Software statt Slides.',
+      'Im Rheinland zuhause, remote überall. Senior-Entwickler:innen statt Schichten — lauffähige Software statt Slides. Im Rheinland zuhause, remote überall. Senior-Entwickler:innen statt Schichten — lauffähige Software statt Slides. Im Rheinland zuhause, remote überall. Senior-Entwickler:innen statt Schichten — lauffähige Software statt Slides. Im Rheinland zuhause, remote überall. Senior-Entwickler:innen statt Schichten — lauffähige Software statt Slides.',
   },
-}
+};
