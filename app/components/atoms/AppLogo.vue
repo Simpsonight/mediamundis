@@ -1,7 +1,24 @@
+<script setup lang="ts">
+const route = useRoute()
+
+function onLogoClick(e: MouseEvent) {
+  // Let the browser handle modified clicks (open in new tab, etc.)
+  if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return
+  // Already on the homepage: don't re-navigate — scroll to the top and drop
+  // any deep-link hash (#work, #leistungen, …) from the URL.
+  if (route.path === '/') {
+    e.preventDefault()
+    if (route.hash) history.replaceState(history.state, '', '/')
+    window.scrollTo({ top: 0 }) // respects html{scroll-behavior} (smooth / auto under reduced motion)
+  }
+  // On other routes the NuxtLink navigates to '/' (Nuxt scrolls to top).
+}
+</script>
+
 <template>
-  <a href="#top" aria-label="mediamundis - Startseite" class="brand">
+  <NuxtLink to="/" aria-label="mediamundis - Startseite" class="brand" @click="onLogoClick">
     <img src="/brand/logo-mediamundis.svg" alt="mediamundis - Software Development, Consulting, AI by Simon Kemmerling" height="24">
-  </a>
+  </NuxtLink>
 </template>
 
 <style scoped>
@@ -19,13 +36,5 @@
   outline: 2px solid var(--color-orange);
   outline-offset: 2px;
   border-radius: 2px;
-}
-.wordmark {
-  font-family: var(--font-sans);
-  font-weight: 800;
-  letter-spacing: -0.04em;
-  font-size: 24px;
-  line-height: 1;
-  color: var(--color-ink);
 }
 </style>
