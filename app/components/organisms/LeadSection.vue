@@ -8,7 +8,7 @@ const progress = usePinProgress(section)
 </script>
 
 <template>
-  <section ref="section" class="lead">
+  <section id="ueber-uns" ref="section" class="lead">
     <div class="lead-grid">
       <OwnerPortrait class="lead-portrait" :progress="progress" />
       <div class="lead-text">

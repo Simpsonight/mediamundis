@@ -69,9 +69,7 @@ function onTab(e: KeyboardEvent) {
       @keydown="onTab"
     >
       <div class="overlay-bar">
-        <span class="overlay-brand" @click="closeMenu">
-          <AppLogo />
-        </span>
+        <span class="overlay-spacer" aria-hidden="true" />
         <MenuToggle />
       </div>
 
@@ -122,9 +120,8 @@ function onTab(e: KeyboardEvent) {
   height: var(--navh);
   padding: 0 var(--gutter);
 }
-/* AppLogo renders the dark mark — flip it white on the ink surface */
-.overlay-brand { display: inline-flex; cursor: pointer; }
-.overlay-brand :deep(img) { filter: brightness(0) invert(1); }
+/* no brand mark on the ink surface — keep the close button right-aligned */
+.overlay-spacer { flex: 1; }
 
 .overlay-body {
   flex: 1;

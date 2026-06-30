@@ -4,6 +4,7 @@ export const site: SiteContent = {
   email: 'hello@mediamundis.de',
   location: 'Rheinland · remote überall',
   navLinks: [
+    { href: '#ueber-uns', label: 'Über uns' },
     { href: '#leistungen', label: 'Leistungen' },
     { href: '#work', label: 'Work' },
   ],
@@ -12,9 +13,9 @@ export const site: SiteContent = {
     { href: '/datenschutz', label: 'Datenschutz' },
   ],
   hero: {
-    lead: 'Schlank, schnell und kompromisslos bei Qualität — mediamundis baut Software für Unternehmen, die den ',
-    faded: 'Maßstab setzen.',
-    sub: 'Die Software-Manufaktur mit echtem Anspruch.',
+    lead: 'Wir entwickeln Individualsoftware, digitale Plattformen und KI-gestützte Prozessautomatisierung — und beraten Teams ',
+    faded: 'von der Idee bis in Produktion.',
+    sub: 'mediamundis ist die Software-Manufaktur aus dem Rheinland — Entwicklung, KI und Prozessberatung seit über zehn Jahren.',
   },
   lead: {
     primaryHtml:
