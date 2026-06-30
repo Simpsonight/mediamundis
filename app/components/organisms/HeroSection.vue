@@ -1,10 +1,17 @@
 <script setup lang="ts">
+import { useWindowScroll } from '@vueuse/core'
 import { site } from '~/data/site'
+
+const { y } = useWindowScroll()
+const reduced = useReducedMotion()
+const dotStyle = computed(() =>
+  reduced.value ? {} : { transform: `translateY(${Math.min(y.value * 0.12, 64)}px)` }
+)
 </script>
 
 <template>
   <header id="top" class="hero">
-    <div class="dotgrid" aria-hidden="true" />
+    <div class="dotgrid" aria-hidden="true" :style="dotStyle" />
     <div class="hero-center wrap">
       <h1>{{ site.hero.lead }}<span class="fade">{{ site.hero.faded }}</span></h1>
       <p class="hero-sub">{{ site.hero.sub }}</p>
@@ -55,9 +62,19 @@ import { site } from '~/data/site'
   to { opacity: 1; transform: none }
 }
 
+/* Sweep animates both position and size so the resting state (100% 100%) matches the demo's
+   static gradient (ink 35% → grey-soft). Before the animation the gradient is 200% wide and
+   shifted right so only the grey-soft tail is visible; it then slides left while shrinking to
+   its final 100%-wide resting size. */
 @keyframes sweep {
-  from { background-position: 120% 0 }
-  to { background-position: 0 0 }
+  from {
+    background-position: 120% 0;
+    background-size: 200% 100%;
+  }
+  to {
+    background-position: 0 0;
+    background-size: 100% 100%;
+  }
 }
 
 /* demo line 56: text-hero token */
@@ -71,10 +88,10 @@ h1 {
   animation: heroRise 0.8s cubic-bezier(.2,.7,.2,1) both;
 }
 
-/* demo lines 57-58: gradient fade text */
+/* demo lines 57-58: gradient fade text — resting size 100% so ink fills 35%, grey-soft fills 65% */
 .fade {
   background: linear-gradient(90deg, var(--color-ink) 35%, var(--color-grey-soft));
-  background-size: 200% 100%;
+  background-size: 100% 100%;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;

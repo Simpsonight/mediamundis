@@ -51,7 +51,7 @@ import { site } from '~/data/site'
   background-size: 0% 100%;
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
-  transition: background-size 0.35s var(--ease-brand), color 0.2s var(--ease-brand), border-color 0.2s var(--ease-brand);
+  transition: background-size 0.35s var(--ease-brand), border-color 0.2s var(--ease-brand);
 }
 
 .primary :deep(a:hover) {

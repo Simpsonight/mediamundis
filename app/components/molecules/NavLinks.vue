@@ -43,14 +43,14 @@ defineProps<{
   background: color-mix(in srgb, var(--color-orange) 12%, transparent);
   transform: scaleX(0);
   transform-origin: left center;
-  transition: transform 0.35s var(--ease-brand);
+  transition: transform 0.3s var(--ease-brand);
 }
 
 .nav-links a:hover::before {
   transform: scaleX(1);
 }
 
-/* underline-grow hover */
+/* underline-grow hover — timing aligned to wash so both finish together */
 .nav-links a::after {
   content: "";
   position: absolute;
@@ -59,7 +59,7 @@ defineProps<{
   height: 2px;
   width: 0;
   background: var(--color-orange);
-  transition: width 0.25s var(--ease-brand);
+  transition: width 0.3s var(--ease-brand);
 }
 
 .nav-links a:hover {
