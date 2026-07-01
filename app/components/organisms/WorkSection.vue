@@ -4,19 +4,23 @@ import { works } from '~/data/works'
 // One reveal per element — called at top level of setup (not in loops)
 const rLabel = useReveal()
 const rIntro = useReveal()
-// Four work rows — one reveal each (works.length is statically 4)
+// Seven work rows — one reveal each (works.length is statically 7)
 const rRow0 = useReveal()
 const rRow1 = useReveal()
 const rRow2 = useReveal()
 const rRow3 = useReveal()
-const rRows = [rRow0, rRow1, rRow2, rRow3]
+const rRow4 = useReveal()
+const rRow5 = useReveal()
+const rRow6 = useReveal()
+const rRows = [rRow0, rRow1, rRow2, rRow3, rRow4, rRow5, rRow6]
+const rCvNote = useReveal()
 </script>
 
 <template>
   <div id="work" class="wrap">
     <!-- Section label with reveal -->
     <div :ref="rLabel.el" :class="{ reveal: true, in: rLabel.shown }">
-      <SectionLabel title="Work" />
+      <SectionLabel title="Projekte" />
     </div>
 
     <!-- Work intro headline with reveal -->
@@ -24,7 +28,7 @@ const rRows = [rRow0, rRow1, rRow2, rRow3]
       :ref="rIntro.el"
       class="work-intro"
       :class="{ reveal: true, in: rIntro.shown }"
-    >Etwas Schweiß, viel Code und <span class="g">zufriedene Kunden.</span>
+    >Ausgewählte Projekte — <span class="g">Technologie und Ergebnis im Fokus.</span>
     </p>
 
     <!-- Work list: each row wrapped in a reveal div -->
@@ -38,6 +42,15 @@ const rRows = [rRow0, rRow1, rRow2, rRow3]
         <WorkRow :work="w" />
       </div>
     </div>
+
+    <!-- CV note: only relevant for Senior-Verstärkung (team support) inquiries -->
+    <p
+      :ref="rCvNote.el"
+      class="cv-note"
+      :class="{ reveal: true, in: rCvNote.shown }"
+    >Für Anfragen zur Senior-Verstärkung sende ich auf Wunsch gerne meinen
+      <a href="#kontakt">detaillierten Lebenslauf</a> mit weiteren Projekten und Referenzen zu.
+    </p>
 
     <!-- Clients marquee below work list -->
     <ClientsMarquee />
@@ -64,5 +77,25 @@ const rRows = [rRow0, rRow1, rRow2, rRow3]
 /* top border on work list */
 .work-list {
   border-top: 1px solid var(--color-line);
+}
+
+/* CV note below the work list */
+.cv-note {
+  margin-top: var(--space-md);
+  max-width: 52ch;
+  font-size: clamp(15px, 1.3vw, 18px);
+  color: var(--color-ink-soft);
+}
+
+.cv-note a {
+  color: var(--color-ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--color-orange);
+  transition: color 0.25s;
+}
+
+.cv-note a:hover {
+  color: var(--color-orange);
 }
 </style>

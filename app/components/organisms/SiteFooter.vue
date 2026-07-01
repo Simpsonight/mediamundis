@@ -6,7 +6,7 @@ const year = useCurrentYear()
 
 <template>
   <footer class="wrap site-footer">
-    <span class="copy">© {{ year }} mediamundis · Software Development &amp; Consulting</span>
+    <span class="copy">© {{ year }} mediamundis · Software Development, Consulting &amp; AI</span>
     <div class="meta">
       <nav class="legal" aria-label="Rechtliches">
         <NuxtLink v-for="link in site.legalLinks" :key="link.href" :to="link.href">{{ link.label }}</NuxtLink>

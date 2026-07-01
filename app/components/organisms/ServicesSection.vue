@@ -39,12 +39,20 @@ const rLabel = useReveal()
 .stack :deep(.card:nth-child(3)) {
   top: calc(var(--navh) + 64px);
 }
+.stack :deep(.card:nth-child(4)) {
+  top: calc(var(--navh) + 88px);
+}
+.stack :deep(.card:nth-child(5)) {
+  top: calc(var(--navh) + 112px);
+}
 
 /* mobile — all cards same top */
 @media (max-width: 820px) {
   .stack :deep(.card:nth-child(1)),
   .stack :deep(.card:nth-child(2)),
-  .stack :deep(.card:nth-child(3)) {
+  .stack :deep(.card:nth-child(3)),
+  .stack :deep(.card:nth-child(4)),
+  .stack :deep(.card:nth-child(5)) {
     top: calc(var(--navh) + 12px);
   }
 }

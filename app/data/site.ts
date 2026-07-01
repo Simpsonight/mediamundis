@@ -1,26 +1,39 @@
 import type { SiteContent } from './types';
 
 export const site: SiteContent = {
-  email: 'hello@mediamundis.de',
+  email: 'sk@mediamundis.de',
   location: 'Rheinland · remote überall',
   navLinks: [
-    { href: '#ueber-uns', label: 'Über uns' },
     { href: '#leistungen', label: 'Leistungen' },
-    { href: '#work', label: 'Work' },
+    { href: '#arbeitsweise', label: 'Arbeitsweise' },
+    { href: '#work', label: 'Projekte' },
+    { href: '#ueber-uns', label: 'Über mich' },
   ],
   legalLinks: [
     { href: '/impressum', label: 'Impressum' },
     { href: '/datenschutz', label: 'Datenschutz' },
   ],
   hero: {
-    lead: 'Wir entwickeln Individualsoftware, digitale Plattformen und KI-gestützte Prozessautomatisierung — und beraten Teams ',
-    faded: 'von der Idee bis in Produktion.',
-    sub: 'mediamundis ist die Software-Manufaktur aus dem Rheinland — Entwicklung, KI und Prozessberatung seit über zehn Jahren.',
+    lead: 'Softwareentwicklung, Consulting und ',
+    faded: 'KI-gestützte Prozessoptimierung',
+    sub: 'Skalierbare digitale Lösungen aus dem Rheinland — entwickelt mit über 20 Jahren Erfahrung in Architektur, Umsetzung und produktivem Betrieb. Für mittelständische Projekte und als gezielte Verstärkung interner Teams.',
   },
   lead: {
+    name: 'Simon Kemmerling',
+    role: 'Senior Fullstack Developer & Solution Architect',
+    headline:
+      'Über 20 Jahre Erfahrung in Softwareentwicklung, Architektur und technischer Beratung',
     primaryHtml:
-      'Seit über zehn Jahren entwickeln wir Plattformen für <a href="#work">den Mittelstand</a>, <a href="#work">Startups</a> und <a href="#work">Konzerne</a>, beraten <a href="#leistungen">technische Teams</a> und bringen <a href="#leistungen">KI in Produktion</a>.',
+      'Als Senior Fullstack Developer und Solution Architect unterstütze ich Unternehmen bei der Planung, Architektur und Umsetzung anspruchsvoller <a href="#leistungen">Software- und KI-Projekte</a>. Nach Stationen vom Frontend-Entwickler über die Bereichsleitung bis in den Vorstand einer Digitalagentur arbeite ich heute selbstständig — mit Fokus auf skalierbare Web-Applikationen, technische Beratung und Künstliche Intelligenz im produktiven Einsatz.',
     secondary:
-      'Im Rheinland zuhause, remote überall. Senior-Entwickler:innen statt Schichten — lauffähige Software statt Slides. Im Rheinland zuhause, remote überall. Senior-Entwickler:innen statt Schichten — lauffähige Software statt Slides. Im Rheinland zuhause, remote überall. Senior-Entwickler:innen statt Schichten — lauffähige Software statt Slides. Im Rheinland zuhause, remote überall. Senior-Entwickler:innen statt Schichten — lauffähige Software statt Slides.',
+      'Im Mittelpunkt stehen belastbare Lösungen statt Präsentationen: klare Architektur, wartbarer Code und Software, die im Betrieb zuverlässig funktioniert. Für größere Vorhaben arbeite ich mit einem festen Netzwerk erfahrener Entwickler zusammen — mit einem zentralen Ansprechpartner und voller Verantwortung.',
+    profile:
+      '20+ Jahre Praxis · Fullstack Development & Solution Architecture · Schwerpunkte: Softwareentwicklung, Consulting und KI · Branchenübergreifend — u. a. Industrie, Mittelstand, B2B, Media, Finanzen, Handel, Healthcare und Sport',
+    // TODO: finale Profil-URLs von Simon ergänzen (aktuell Platzhalter).
+    socials: [
+      { href: '#', label: 'LinkedIn' },
+      { href: '#', label: 'Xing' },
+      { href: '#', label: 'GitHub' },
+    ],
   },
 };

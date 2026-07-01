@@ -12,10 +12,21 @@ const progress = usePinProgress(section)
     <div class="lead-grid">
       <OwnerPortrait class="lead-portrait" :progress="progress" />
       <div class="lead-text">
+        <span class="lead-id">{{ site.lead.name }} · {{ site.lead.role }}</span>
+        <h2 class="lead-headline">{{ site.lead.headline }}</h2>
         <!-- Primary copy contains links — v-html is safe; string comes from trusted static data -->
         <!-- eslint-disable-next-line vue/no-v-html -->
         <p class="primary" v-html="site.lead.primaryHtml" />
         <p class="secondary">{{ site.lead.secondary }}</p>
+        <p class="lead-profile">{{ site.lead.profile }}</p>
+        <nav class="lead-socials" aria-label="Profile">
+          <a
+            v-for="s in site.lead.socials"
+            :key="s.label"
+            :href="s.href"
+            class="lead-social"
+          >{{ s.label }}</a>
+        </nav>
       </div>
     </div>
   </section>
@@ -67,13 +78,36 @@ const progress = usePinProgress(section)
   }
 }
 
+/* identity eyebrow — name + role above the headline */
+.lead-id {
+  display: block;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--color-grey-strong);
+  margin-bottom: 14px;
+}
+
+/* section headline (H2) */
+.lead-headline {
+  font-size: clamp(22px, 2.2vw, 32px);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--color-ink);
+  text-wrap: balance;
+  max-width: 24ch;
+  margin-bottom: clamp(20px, 2vw, 28px);
+}
+
 /* first paragraph (primary HTML) — intro voice: larger + medium weight */
 .primary {
-  font-size: clamp(20px, 1.9vw, 28px);
+  font-size: clamp(18px, 1.6vw, 24px);
   font-weight: 500;
   line-height: 1.44;
   color: var(--color-ink);
-  max-width: 34ch;
+  max-width: 40ch;
 }
 
 /* inline links inside v-html — :deep() required */
@@ -104,6 +138,41 @@ const progress = usePinProgress(section)
   color: var(--color-ink-soft);
   font-size: var(--text-lead-soft);
   line-height: 1.44;
-  max-width: 34ch;
+  max-width: 40ch;
+}
+
+/* compact profile line — muted, dot-separated skills/branches */
+.lead-profile {
+  margin-top: 24px;
+  color: var(--color-grey-strong);
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 500;
+  max-width: 46ch;
+}
+
+/* social profile links */
+.lead-socials {
+  margin-top: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.lead-social {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-ink);
+  text-decoration: none;
+  border-bottom: 1.5px solid var(--color-line);
+  padding-bottom: 2px;
+  transition: border-color 0.2s var(--ease-brand), color 0.2s var(--ease-brand);
+}
+.lead-social:hover {
+  color: var(--color-orange);
+  border-color: var(--color-orange);
+}
+.lead-social:focus-visible {
+  outline: 2px solid var(--color-orange);
+  outline-offset: 3px;
 }
 </style>

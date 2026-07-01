@@ -1,17 +1,29 @@
 # mediamundis
 
-> Software-Manufaktur aus dem Rheinland — schlanke, schnelle Software für
-> Unternehmen, die den Maßstab setzen. Development, Consulting, KI in Produktion.
+> mediamundis ist ein Software- und Beratungsstudio aus dem Rheinland (Raum Köln),
+> verantwortet von Simon Kemmerling, Senior Fullstack Developer und Solution Architect
+> mit über 20 Jahren Erfahrung.
 
 ## Leistungen
-- Software Development: von Architektur bis Betrieb — Web & API, Cloud-native, CI/CD, Plattformen.
-- Consulting: Architektur-Reviews, Tech-Due-Diligence, Team-Enablement.
-- Artificial Intelligence: LLM & RAG, Automatisierung, Evaluation, Guardrails.
+- Softwareentwicklung: Individualsoftware, skalierbare Web-Applikationen und Plattformen —
+  Architektur bis Betrieb (TypeScript, Vue/Nuxt, Angular, React, Node.js, AWS/Serverless).
+- Consulting: IT-Beratung, Solution Architecture, Requirements Engineering, technische
+  Konzeption, Tech-Due-Diligence, Architektur-Reviews, Team-Enablement.
+- Künstliche Intelligenz (KI/AI): LLM- und RAG-Anwendungen, Prozessautomatisierung, KI in
+  Produktion — evaluierbar, abgesichert, betrieblich getestet.
+- Websites, Performance & technische SEO: Core Web Vitals, Barrierefreiheit, messbare Optimierung.
+
+## Zusammenarbeit
+- Projektumsetzung für den Mittelstand: individuelle Software, Websites und KI-Anwendungen
+  schlüsselfertig, bei Bedarf ergänzt durch ein festes Entwickler-Netzwerk.
+- Senior-Verstärkung für interne Teams: als Freelancer, Interim Lead oder Solution Architect
+  auf Zeit — remote, deutschlandweit.
 
 ## Kontakt
-- E-Mail: hello@mediamundis.de — Rheinland · remote überall.
+- E-Mail: sk@mediamundis.de — Rheinland · remote überall.
 
 ## Hinweise
 - Sprache: Deutsch.
-- Die im "Work"- und "Vertrauen von"-Bereich gezeigten Projekte und Marken sind
-  derzeit Platzhalter und werden durch echte Referenzen ersetzt.
+- Die im "Projekte"-Bereich gezeigten Referenzen basieren auf realen Projekten, sind aus
+  Vertraulichkeitsgründen aber anonymisiert (Branche, Technologie und Ergebnis statt Kundenname).
+- Die im "Vertrauen von"-Bereich gezeigten Logos sind derzeit Platzhalter.

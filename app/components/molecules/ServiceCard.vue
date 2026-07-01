@@ -78,7 +78,7 @@ const display = computed(() =>
   font-size: var(--text-card-title);
   line-height: 0.96;
   letter-spacing: -0.03em;
-  max-width: 11ch;
+  max-width: 16ch;
   text-wrap: balance;
 }
 

@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { site } from '~/data/site'
+
 const rH2 = useReveal()
 const rRow = useReveal()
 </script>
@@ -11,20 +13,28 @@ const rRow = useReveal()
         :ref="rH2.el"
         :class="{ reveal: true, in: rH2.shown }"
       >
-        Lass uns etwas<br><span class="g">bauen.</span>
+        Projekt oder Verstärkung?<br><span class="g">Sprechen wir darüber.</span>
       </h2>
 
-      <!-- CTA row with reveal -->
-      <div
+      <!-- Intro line with reveal -->
+      <p
         :ref="rRow.el"
+        class="contact-intro"
+        :class="{ reveal: true, in: rRow.shown }"
+      >
+        Ob konkretes Vorhaben oder erste technische Einschätzung — beschreiben Sie kurz Ihre Anforderung. Sie erhalten eine fundierte, ehrliche Rückmeldung.
+      </p>
+
+      <!-- CTA row -->
+      <div
         class="row"
         :class="{ reveal: true, in: rRow.shown }"
       >
-        <a class="mail" href="mailto:hello@mediamundis.de">
-          hello@mediamundis.de
+        <a class="mail" :href="`mailto:${site.email}`">
+          {{ site.email }}
           <IconArrow variant="right" class="mail-icon" aria-hidden="true" />
         </a>
-        <BasePill to="mailto:hello@mediamundis.de" label="Projekt anfragen" />
+        <BasePill :to="`mailto:${site.email}`" label="Projekt anfragen" />
       </div>
     </div>
 
@@ -50,6 +60,16 @@ h2 {
 /* grey accent */
 .g {
   color: var(--color-grey);
+}
+
+/* intro line under the headline */
+.contact-intro {
+  margin-top: clamp(20px, 3vw, 32px);
+  max-width: 52ch;
+  font-size: clamp(15px, 1.3vw, 18px);
+  line-height: 1.5;
+  color: var(--color-ink-soft);
+  font-weight: 500;
 }
 
 /* row layout */

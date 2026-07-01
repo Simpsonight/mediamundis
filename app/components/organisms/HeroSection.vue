@@ -115,7 +115,6 @@ onBeforeUnmount(() => cancelAnimationFrame(raf))
   font-size: var(--text-hero);
   line-height: 0.98;
   letter-spacing: -0.03em;
-  max-width: 17ch;
   text-wrap: balance;
 }
 

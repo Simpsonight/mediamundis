@@ -16,7 +16,7 @@ defineProps<{
       </h3>
       <p>{{ work.description }}</p>
       <div class="meta">
-        <b>{{ work.year }}</b> · {{ work.meta.join(' · ') }}
+        {{ work.meta.join(' · ') }}
       </div>
     </div>
     <div class="work-thumb">
@@ -91,11 +91,6 @@ p {
   display: flex;
   gap: 14px;
   align-items: center;
-}
-
-.meta b {
-  font-weight: 600;
-  color: var(--color-ink);
 }
 
 .work-thumb {

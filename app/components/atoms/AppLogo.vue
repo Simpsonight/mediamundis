@@ -31,6 +31,17 @@ function onLogoClick(e: MouseEvent) {
   width: 300px;
 }
 
+/* Render the multi-color brand SVG in solid black; reveal the brand colors on hover */
+.brand img {
+  filter: brightness(0);
+  transition: filter 0.3s;
+}
+
+.brand:hover img,
+.brand:focus-visible img {
+  filter: none;
+}
+
 /* a11y focus ring */
 .brand:focus-visible {
   outline: 2px solid var(--color-orange);

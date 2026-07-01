@@ -1,8 +1,8 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Software Development, Consulting & AI',
+  title: 'Softwareentwicklung, Consulting & KI aus dem Rheinland',
   description:
-    'mediamundis baut schlanke, schnelle Software für Mittelstand, Startups und Konzerne — Development, Consulting und KI in Produktion. Im Rheinland zuhause, remote überall.',
+    'Individuelle Softwareentwicklung, technisches Consulting und Künstliche Intelligenz in Produktion. Senior-Expertise mit über 20 Jahren Erfahrung — für den Mittelstand und als Verstärkung interner Teams. Im Rheinland zuhause, remote überall.',
 });
 </script>
 
@@ -11,6 +11,7 @@ useSeoMeta({
   <main class="content-panel">
     <LeadSection />
     <ServicesSection />
+    <EngagementSection />
     <WorkSection />
     <ContactSection />
   </main>

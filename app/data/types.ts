@@ -16,7 +16,6 @@ export interface Work {
   eyebrow: string
   title: string
   description: string
-  year: number
   meta: string[]
   href: string
   mini: { cols: number; rows: number; onIndex: number }
@@ -42,6 +41,21 @@ export interface NavLink {
   label: string
 }
 
+export interface SocialLink {
+  href: string
+  label: string
+}
+
+/** One of the two ways to work together (Arbeitsweise section). */
+export interface Engagement {
+  id: string
+  eyebrow: string
+  title: string
+  body: string
+  points: string[]
+  cta: { href: string; label: string }
+}
+
 export interface SiteContent {
   email: string
   location: string
@@ -53,7 +67,12 @@ export interface SiteContent {
     sub: string
   }
   lead: {
+    name: string
+    role: string
+    headline: string
     primaryHtml: string
     secondary: string
+    profile: string
+    socials: SocialLink[]
   }
 }
