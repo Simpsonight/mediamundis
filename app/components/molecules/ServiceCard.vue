@@ -100,7 +100,7 @@ const display = computed(() =>
   font-size: var(--text-card-body);
   line-height: 1.32;
   color: var(--color-ink);
-  max-width: 24ch;
+  max-width: 40ch;
   font-weight: 500;
 }
 

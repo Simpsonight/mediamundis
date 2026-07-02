@@ -79,9 +79,9 @@ const dev = computed(() => {
     aspect-ratio: auto;
     align-self: stretch;
 
-    /* head large and cropped, aligned left (bleed) */
-    -webkit-mask: url(/simon-kemmerling.svg) left top / auto 135% no-repeat;
-    mask: url(/simon-kemmerling.svg) left top / auto 135% no-repeat;
+    /* head slightly smaller and offset down → whitespace above the head, still left-aligned (bleed) */
+    -webkit-mask: url(/simon-kemmerling.svg) left var(--space-lg) / auto 120% no-repeat;
+    mask: url(/simon-kemmerling.svg) left var(--space-lg) / auto 120% no-repeat;
   }
 }
 

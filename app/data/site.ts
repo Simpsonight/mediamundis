@@ -24,7 +24,7 @@ export const site: SiteContent = {
     headline:
       'Über 20 Jahre Erfahrung in Softwareentwicklung, Architektur und technischer Beratung',
     primaryHtml:
-      'Als Senior Fullstack Developer und Solution Architect unterstütze ich Unternehmen bei der Planung, Architektur und Umsetzung anspruchsvoller <a href="#leistungen">Software- und KI-Projekte</a>. Nach Stationen vom Frontend-Entwickler über die Bereichsleitung bis in den Vorstand einer Digitalagentur arbeite ich heute selbstständig — mit Fokus auf skalierbare Web-Applikationen, technische Beratung und Künstliche Intelligenz im produktiven Einsatz.',
+      'Als Senior Fullstack Developer und Solution Architect unterstütze ich Unternehmen bei der Planung, Architektur und Umsetzung anspruchsvoller Software- und KI-Projekte. Meine Erfahrung reicht von vielen Jahren praktischer Web- und Softwareentwicklung über die technische Leitung komplexer Projekte für namhafte Kunden und Unternehmen bis hin zu Bereichsleitung und Vorstandstätigkeit in einer Digitalagentur. Heute arbeite ich selbstständig - mit Fokus auf skalierbare Web-Applikationen, technische Beratung und Künstliche Intelligenz im produktiven Einsatz.',
     secondary:
       'Im Mittelpunkt stehen belastbare Lösungen statt Präsentationen: klare Architektur, wartbarer Code und Software, die im Betrieb zuverlässig funktioniert. Für größere Vorhaben arbeite ich mit einem festen Netzwerk erfahrener Entwickler zusammen — mit einem zentralen Ansprechpartner und voller Verantwortung.',
     profile:
