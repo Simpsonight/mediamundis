@@ -108,3 +108,179 @@
     transform: none;
   }
 }
+
+/* ===========================================================================
+   Print — sauberes, tintensparendes Druckbild.
+   Bildschirm-Chrome (fixe Nav, Menü, Deko-Grafiken, Marquee, Hover-Icons) raus;
+   Reveal-Animationen zwingend sichtbar; sticky/Full-Height entpinnt; die fluide
+   vw-Typo/Abstände auf feste pt/px umgestellt (vw bezieht sich auf Papierbreite);
+   Portrait & Showcase-Thumbnails bleiben; Orange-Akzent bleibt dezent erhalten.
+   =========================================================================== */
+@media print {
+  @page {
+    margin: 18mm 16mm;
+  }
+
+  /* Fluide Tokens auf feste, papiertaugliche Werte umdefinieren.
+     Alle Elemente, die var(--text-*)/var(--space-*) nutzen, folgen automatisch. */
+  :root {
+    --navh: 0px;
+    --gutter: 0px;
+
+    --text-hero: 30pt;
+    --text-contact: 26pt;
+    --text-work-intro: 20pt;
+    --text-card-title: 21pt;
+    --text-work-title: 16pt;
+    --text-card-body: 12pt;
+    --text-lead: 12pt;
+    --text-lead-soft: 10pt;
+    --text-logo: 12pt;
+    --text-menu: 20pt;
+
+    --space-2xs: 6px;
+    --space-xs: 8px;
+    --space-sm: 12px;
+    --space-md: 16px;
+    --space-lg: 20px;
+    --space-xl: 28px;
+    --space-2xl: 36px;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+  body {
+    background: #fff;
+    color: var(--color-ink);
+    overflow: visible;
+    font-size: 11pt;
+    line-height: 1.5;
+    letter-spacing: 0;
+    /* Orange-Markenakzent auch im Druck erhalten (S/W-Drucker → Grau). */
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Animationen/Transitions still; Reveal-Inhalte zwingend sichtbar.
+     .work-row trägt selbst die reveal-Klasse → ohne dies bliebe es leer. */
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* Chrome, Overlays und reine Deko entfernen. */
+  #nav,
+  #menu-overlay,
+  .overlay,
+  .menu-toggle,
+  .scroll-cue,
+  .dotfield,
+  .dotgrid,
+  .dot-canvas,
+  .dot-grid,
+  .matrix,
+  .spot,
+  .clients,
+  .marquee,
+  .marquee-track,
+  .arrow-btn,
+  .ar,
+  .visit-ar,
+  .pill-icon,
+  .arrow-icon,
+  .back {
+    display: none !important;
+  }
+
+  /* Sticky / Full-Height entpinnen → keine Leerseiten, kein Versatz. */
+  .hero {
+    position: static !important;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+  }
+  .lead {
+    min-height: 0 !important;
+  }
+  /* Card: sticky → static is safe (no positioned dark children remain). */
+  .card {
+    position: static !important;
+    min-height: 0 !important;
+  }
+  /* Portrait: sticky → RELATIVE (not static). Its child `.ink` is
+     position:absolute; inset:0 — a static parent would release it to fill
+     .content-panel and paint a dark layer behind every section. Keeping the
+     portrait a positioned box preserves the SVG-mask containment. */
+  .lead-portrait,
+  .portrait {
+    position: relative !important;
+  }
+
+  /* Schatten/erhabene Flächen flach für Papier. */
+  .content-panel,
+  .card,
+  .eng-card,
+  .work-thumb {
+    box-shadow: none !important;
+  }
+
+  /* Portrait fertig „entwickelt" zeigen (sonst scroll-abhängig unsichtbar)
+     und Bildgrößen auf vernünftiges Druckmaß begrenzen. */
+  .portrait {
+    --dev: 1 !important;
+  }
+  .portrait .ink {
+    opacity: 1 !important;
+  }
+  /* Portrait kleiner und vollständig sichtbar (nicht im Anschnitt).
+     Der Mobile-Breakpoint setzt height:40vh + mask/cover → riesig und
+     beschnitten; hier auf feste Breite mit contain-Maske zurücksetzen. */
+  .portrait,
+  .lead-portrait {
+    width: 55mm !important;
+    max-width: 55mm !important;
+    height: auto !important;
+    aspect-ratio: 2679.64 / 3037.39 !important;
+    margin: 0 auto !important;
+    -webkit-mask: url(/simon-kemmerling.svg) center / contain no-repeat !important;
+    mask: url(/simon-kemmerling.svg) center / contain no-repeat !important;
+  }
+  /* Referenz-Thumbnails: max. 4 cm breit (Seitenverhältnis 16/10 → 40×25 mm). */
+  .work-thumb {
+    width: 40mm !important;
+  }
+  .work-thumb img,
+  img {
+    max-width: 100% !important;
+    height: auto;
+  }
+
+  /* Seitenumbruch-Hygiene. */
+  h1,
+  h2,
+  h3 {
+    break-after: avoid-page;
+  }
+  .card,
+  .eng-card,
+  .work-row,
+  .work-thumb {
+    break-inside: avoid;
+  }
+  p {
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* Legal-Seiten: der padding-top kompensiert die (jetzt entfernte) fixe Nav. */
+  .legal {
+    padding-top: var(--space-lg) !important;
+  }
+}
