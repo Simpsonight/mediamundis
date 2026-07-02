@@ -11,15 +11,33 @@ export interface Service {
   reveal: Reveal
 }
 
-export interface Work {
+export type WorkKind = 'technical' | 'showcase'
+
+interface WorkBase {
   id: string
+  kind: WorkKind
   eyebrow: string
   title: string
   description: string
   meta: string[]
-  href: string
-  mini: { cols: number; rows: number; onIndex: number }
 }
+
+/** Software/consulting project — no public URL, the stack/meta is the visual. */
+export interface TechnicalWork extends WorkBase {
+  kind: 'technical'
+}
+
+/** Live web reference — links out to the running site, shown with a screenshot. */
+export interface ShowcaseWork extends WorkBase {
+  kind: 'showcase'
+  /** External live site the whole row links to. */
+  url: string
+  /** Display label for the link; falls back to the host of `url` if omitted. */
+  siteName?: string
+  image: { src: string; alt: string; width: number; height: number }
+}
+
+export type Work = TechnicalWork | ShowcaseWork
 
 export type ClientMark =
   | 'ringo'

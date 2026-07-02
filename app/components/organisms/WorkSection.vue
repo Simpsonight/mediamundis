@@ -1,18 +1,10 @@
 <script setup lang="ts">
 import { works } from '~/data/works'
 
-// One reveal per element — called at top level of setup (not in loops)
+// One reveal per element — called at top level of setup (not in loops).
+// Per-row reveals live inside WorkRow, so the list scales to any entry count.
 const rLabel = useReveal()
 const rIntro = useReveal()
-// Seven work rows — one reveal each (works.length is statically 7)
-const rRow0 = useReveal()
-const rRow1 = useReveal()
-const rRow2 = useReveal()
-const rRow3 = useReveal()
-const rRow4 = useReveal()
-const rRow5 = useReveal()
-const rRow6 = useReveal()
-const rRows = [rRow0, rRow1, rRow2, rRow3, rRow4, rRow5, rRow6]
 const rCvNote = useReveal()
 </script>
 
@@ -28,19 +20,16 @@ const rCvNote = useReveal()
       :ref="rIntro.el"
       class="work-intro"
       :class="{ reveal: true, in: rIntro.shown }"
-    >Ausgewählte Projekte — <span class="g">Technologie und Ergebnis im Fokus.</span>
+    >Ausgewählte Projekte und Referenzen — <span class="g">Technologie, Ergebnis und Live-Arbeiten.</span>
     </p>
 
-    <!-- Work list: each row wrapped in a reveal div -->
+    <!-- Work list: technical projects and live web references, mixed. -->
     <div class="work-list">
-      <div
-        v-for="(w, i) in works"
+      <WorkRow
+        v-for="w in works"
         :key="w.id"
-        :ref="rRows[i]?.el"
-        :class="{ reveal: true, in: rRows[i]?.shown }"
-      >
-        <WorkRow :work="w" />
-      </div>
+        :work="w"
+      />
     </div>
 
     <!-- CV note: only relevant for Senior-Verstärkung (team support) inquiries -->
