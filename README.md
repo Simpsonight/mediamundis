@@ -1,42 +1,50 @@
-# Nuxt 3 Minimal Starter
+# mediamundis
 
-Look at the [nuxt 3 documentation](https://v3.nuxtjs.org) to learn more.
+Marketing- und Landingpage für **mediamundis** – die Person-Marke von Simon Kemmerling (Senior Fullstack Developer & Solution Architect), gerahmt als Firma. Deutschsprachig, statisch vorgerendert (SSG), SEO- und GEO-optimiert.
+
+## Stack
+
+- **Nuxt 4** + **Vue 3** (Quellcode unter `app/`)
+- **Tailwind CSS v4** – CSS-first über `@tailwindcss/vite`, kein `tailwind.config.js`
+- **@nuxtjs/seo** – Robots, Sitemap, OG-Image, Schema.org, Site-Config
+- **@nuxt/image**, **@nuxt/fonts** (Archivo), **@nuxt/eslint**, **@vueuse/core**
 
 ## Setup
 
-Make sure to install the dependencies:
-
 ```bash
-# yarn
-yarn install
-
-# npm
 npm install
-
-# pnpm
-pnpm install --shamefully-hoist
 ```
 
-## Development Server
-
-Start the development server on http://localhost:3000
+## Entwicklung
 
 ```bash
-npm run dev
+npm run dev        # Dev-Server auf http://localhost:3000
+npm run lint       # ESLint (Flat Config)
 ```
 
-## Production
-
-Build the application for production:
+## Build & Prerender
 
 ```bash
-npm run build
+npm run build      # Produktions-Build
+npm run generate   # Statisches Prerender → .output/public
+npm run preview    # Produktions-Build lokal ansehen
 ```
 
-Locally preview production build:
+Es gibt kein Unit-Test-Framework; Verifikation erfolgt über `npm run lint` + `npm run generate` und Sichtprüfung.
 
-```bash
-npm run preview
+## Struktur
+
+```
+app/
+  app.vue              # Root: Layout + globale SEO/Schema.org-Defaults
+  layouts/default.vue  # header/main/footer-Shell
+  pages/               # index.vue (Landing), impressum.vue, datenschutz.vue
+  components/          # Atomic Design: atoms/ · molecules/ · organisms/
+  composables/         # SSR-sichere Motion-/Interaktions-Helfer (@vueuse)
+  data/                # Sämtliche Inhalte als typisierte Daten (types.ts)
+  assets/css/main.css  # Design-System: @theme-Tokens + @utility
+public/                # llms.txt, Favicon, Brand-Assets
+docs/                  # website-texte.md (Text-Vorlage), demo.html (Referenz)
 ```
 
-Checkout the [deployment documentation](https://v3.nuxtjs.org/guide/deploy/presets) for more information.
+**Inhalte liegen als Daten in `app/data/*.ts`**, nicht im Markup – zum Ändern von Texten oder Sektionen die Datendatei bearbeiten, nicht die Komponente. Details und Konventionen: siehe [`CLAUDE.md`](./CLAUDE.md).
