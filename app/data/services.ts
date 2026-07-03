@@ -118,10 +118,12 @@ export const services: Service[] = [
     body: 'Skalierbare Web-Applikationen, Plattformen und individuelle Softwarelösungen, die langfristig wartbar bleiben — von der Architektur über Entwicklung und Qualitätssicherung bis zum produktiven Betrieb.',
     tags: [
       'TypeScript',
-      'Vue/Nuxt',
+      'Vue',
       'Angular',
       'React',
       'Node.js',
+      'Python',
+      'Datenbanken',
       'APIs',
       'AWS/Serverless',
     ],
@@ -146,7 +148,7 @@ export const services: Service[] = [
   {
     id: 'web-performance-seo',
     title: 'Websites, Performance & technische SEO',
-    body: 'Schnelle, technisch sauber umgesetzte Websites mit Fokus auf Performance, Core Web Vitals, Barrierefreiheit und nachhaltige SEO-Strukturen — messbar gemacht durch Analysen, Audits und dokumentierte Verbesserungen.',
+    body: 'Schnelle, technisch sauber umgesetzte Websites und Online-Shops mit Fokus auf UX, Performance, Core Web Vitals, Barrierefreiheit und nachhaltige SEO-Strukturen — messbar gemacht durch Analysen, Audits und dokumentierte Verbesserungen.',
     tags: [
       'Nuxt/Next',
       'Core Web Vitals',

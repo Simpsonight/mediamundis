@@ -21,7 +21,7 @@ const rCards = [rCard0, rCard1]
       :ref="rIntro.el"
       class="eng-intro"
       :class="{ reveal: true, in: rIntro.shown }"
-    >Zwei Modelle der Zusammenarbeit, <span class="g">ein Ansprechpartner.</span>
+    >Zwei Modelle der Zusammenarbeit, <span class="g">ein Ansprechpartner</span>
     </p>
 
     <!-- Two equal engagement paths -->

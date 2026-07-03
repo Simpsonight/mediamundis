@@ -16,7 +16,7 @@ export const site: SiteContent = {
   hero: {
     lead: 'Softwareentwicklung, Consulting und ',
     faded: 'KI-gestützte Prozessoptimierung',
-    sub: 'Skalierbare digitale Lösungen aus dem Rheinland — entwickelt mit über 20 Jahren Erfahrung in Architektur, Umsetzung und produktivem Betrieb. Für mittelständische Projekte und als gezielte Verstärkung interner Teams.',
+    sub: 'Skalierbare digitale Lösungen aus dem Rheinland — mit technischer Verantwortung von der Architektur bis zum produktiven Betrieb. Für anspruchsvolle Softwareprojekte, technische Beratung und die gezielte Verstärkung interner Teams.',
   },
   lead: {
     name: 'Simon Kemmerling',
@@ -24,11 +24,11 @@ export const site: SiteContent = {
     headline:
       'Über 20 Jahre Erfahrung in Softwareentwicklung, Architektur und technischer Beratung',
     primaryHtml:
-      'Als Senior Fullstack Developer und Solution Architect unterstütze ich Unternehmen bei der Planung, Architektur und Umsetzung anspruchsvoller Software- und KI-Projekte. Meine Erfahrung reicht von vielen Jahren praktischer Web- und Softwareentwicklung über die technische Leitung komplexer Projekte für namhafte Kunden und Unternehmen bis hin zu Bereichsleitung und Vorstandstätigkeit in einer Digitalagentur. Heute arbeite ich selbstständig - mit Fokus auf skalierbare Web-Applikationen, technische Beratung und Künstliche Intelligenz im produktiven Einsatz.',
+      'Als Senior Fullstack Developer und Solution Architect unterstütze ich Unternehmen bei der Planung, Architektur und Umsetzung anspruchsvoller Software- und KI-Projekte. Meine Erfahrung reicht von vielen Jahren praktischer Web- und Softwareentwicklung über die technische Leitung komplexer Projekte für namhafte Kunden und Unternehmen bis hin zu Bereichsleitung und Vorstandstätigkeit in einer Digitalagentur. Diese Kombination aus Entwicklungspraxis, Architekturkompetenz und Führungserfahrung bringe ich gezielt in Projekte ein — für fundierte technische Entscheidungen, verlässliche Umsetzung und Beratung auf Augenhöhe. Der Fokus liegt auf skalierbaren Web-Applikationen, technischer Beratung und Künstlicher Intelligenz im produktiven Einsatz.',
     secondary:
       'Im Mittelpunkt stehen belastbare Lösungen statt Präsentationen: klare Architektur, wartbarer Code und Software, die im Betrieb zuverlässig funktioniert. Für größere Vorhaben arbeite ich mit einem festen Netzwerk erfahrener Entwickler zusammen — mit einem zentralen Ansprechpartner und voller Verantwortung.',
     profile:
-      '20+ Jahre Praxis · Fullstack Development & Solution Architecture · Schwerpunkte: Softwareentwicklung, Consulting und KI · Branchenübergreifend — u. a. Industrie, Mittelstand, B2B, Media, Finanzen, Handel, Healthcare und Sport',
+      '20+ Jahre Praxis · Fullstack Development & Solution Architecture · Schwerpunkte: Web- und Softwareentwicklung, Consulting und KI · Branchenübergreifend — u. a. Industrie, Mittelstand, B2B, Media, Finanzen, Handel, Healthcare und Sport',
     // TODO: finale Profil-URLs von Simon ergänzen (aktuell Platzhalter).
     socials: [
       { href: '#', label: 'LinkedIn' },

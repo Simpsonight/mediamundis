@@ -65,7 +65,7 @@ const progress = usePinProgress(section)
     min-height: 100vh;
     grid-template-columns:
       minmax(0, 1fr)                                       /* portrait, bleeds left */
-      minmax(auto, 52ch)                                   /* text */
+      minmax(auto, 65ch)                                   /* text */
       max(var(--gutter), calc((100vw - var(--maxw)) / 2)); /* right gutter = wrap boundary */
     column-gap: clamp(32px, 5vw, 80px);
   }
@@ -76,7 +76,7 @@ const progress = usePinProgress(section)
     align-self: center;    /* vertically centered */
     /* clears the fixed header + optical breathing room so the block no longer hugs the top edge */
     padding-block: calc(var(--navh) + var(--space-md)) var(--space-md);
-    max-width: 52ch;
+    max-width: 65ch;
   }
 }
 
@@ -99,7 +99,7 @@ const progress = usePinProgress(section)
   letter-spacing: -0.02em;
   color: var(--color-ink);
   text-wrap: balance;
-  max-width: 24ch;
+  max-width: 55ch;
   margin-bottom: clamp(20px, 2vw, 28px);
 }
 
@@ -109,7 +109,7 @@ const progress = usePinProgress(section)
   font-weight: 500;
   line-height: 1.44;
   color: var(--color-ink);
-  max-width: 46ch;
+  max-width: 55ch;
 }
 
 /* inline links inside v-html — :deep() required */
@@ -140,7 +140,7 @@ const progress = usePinProgress(section)
   color: var(--color-ink-soft);
   font-size: var(--text-lead-soft);
   line-height: 1.44;
-  max-width: 46ch;
+  max-width: 55ch;
 }
 
 /* compact profile line — muted, dot-separated skills/branches */
@@ -150,7 +150,7 @@ const progress = usePinProgress(section)
   font-size: 14px;
   line-height: 1.5;
   font-weight: 500;
-  max-width: 52ch;
+  max-width: 55ch;
 }
 
 /* social profile links */
