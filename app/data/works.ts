@@ -10,7 +10,7 @@ export const works: Work[] = [
   {
     id: 'showcase-beispiel-eins',
     kind: 'showcase',
-    eyebrow: 'Web · Corporate',
+    eyebrow: 'Projekt · B2B',
     title: 'Norsonic-Tippkemper GmbH',
     description:
       'Platzhalter: Kurzbeschreibung der Live-Referenz in einer Zeile — was gebaut wurde und welche Wirkung sie hat.',
@@ -20,6 +20,23 @@ export const works: Work[] = [
     image: {
       src: '/references/beispiel-eins.png',
       alt: 'Screenshot der Website Beispiel-Referenz — Unternehmensseite',
+      width: 1280,
+      height: 800,
+    },
+  },
+  {
+    id: 'cplus',
+    kind: 'showcase',
+    eyebrow: 'Projekt · E-Commerce',
+    title: 'No-Code Buchungsplattform für Online-Webinare ',
+    description:
+      'Webplattform auf Bubble.io mit integriertem Shop zur Buchung und Verwaltung von Online-Webinaren. Sämtliche Prozesse dahinter laufen automatisiert — von der Zahlung über Mollie und der Rechnungsstellung via FastBill bis zu Einladungen, Erinnerungen und Bestätigungen per Zapier-Workflows, flankiert von einem integrierten Hilfesystem.',
+    meta: ['No-Code/Low-Code', 'Prozess-Automatisierung', 'Bubble.io'],
+    url: 'https://cplus.vetworking.de/',
+    siteName: 'cplus.vetworking.de',
+    image: {
+      src: '/references/beispiel-zwei.png',
+      alt: 'Screenshot der Website Beispiel-Referenz — Online-Shop',
       width: 1280,
       height: 800,
     },
@@ -41,23 +58,6 @@ export const works: Work[] = [
     description:
       'Automatische Szenenerkennung, Transkription und Metadaten-Anreicherung beschleunigen Recherche und Archivierung großer Videobestände — von der Idee bis zum produktiven, evaluierten Betrieb.',
     meta: ['KI/AI', 'Automatisierung', 'Python'],
-  },
-  {
-    id: 'cplus',
-    kind: 'showcase',
-    eyebrow: 'Web · E-Commerce',
-    title: 'No-Code Buchungsplattform für Online-Webinare ',
-    description:
-      'Webplattform auf Bubble.io mit integriertem Shop zur Buchung und Verwaltung von Online-Webinaren. Sämtliche Prozesse dahinter laufen automatisiert — von der Zahlung über Mollie und der Rechnungsstellung via FastBill bis zu Einladungen, Erinnerungen und Bestätigungen per Zapier-Workflows, flankiert von einem integrierten Hilfesystem.',
-    meta: ['No-Code/Low-Code', 'Prozess-Automatisierung', 'Bubble.io'],
-    url: 'https://cplus.vetworking.de/',
-    siteName: 'cplus.vetworking.de',
-    image: {
-      src: '/references/beispiel-zwei.png',
-      alt: 'Screenshot der Website Beispiel-Referenz — Online-Shop',
-      width: 1280,
-      height: 800,
-    },
   },
   {
     id: 'serverless-backend',

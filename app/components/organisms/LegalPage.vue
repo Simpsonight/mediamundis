@@ -71,6 +71,22 @@ h1 {
   font-weight: 600;
   letter-spacing: -0.01em;
 }
+
+.content :deep(h3) {
+  margin-top: clamp(28px, 3.5vw, 44px);
+  color: var(--color-ink);
+  margin-bottom: 10px;
+  font-size: clamp(18px, 1.2vw, 22px);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.content :deep(h4) {
+  color: var(--color-ink);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
 .content :deep(p) { margin-bottom: 14px; }
 .content :deep(p:last-child) { margin-bottom: 0; }
 .content :deep(a) {
