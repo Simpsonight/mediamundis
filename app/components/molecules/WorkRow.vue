@@ -5,6 +5,22 @@ const props = defineProps<{
   work: Work
 }>()
 
+// Full-coverage dot grid for the hover wave (brand halftone language: 19-unit grid).
+// `d` = normalised diagonal position (0 = bottom-left → 1 = top-right); it drives the
+// per-dot animation-delay so the "pop" travels diagonally across the thumbnail.
+// Built once at module load and shared by every row.
+const WAVE_VB = { w: 380, h: 238, step: 19 }
+const waveDots = Array.from(function* () {
+  const { w, h, step } = WAVE_VB
+  for (let y = step / 2; y < h; y += step)
+    for (let x = step / 2; x < w; x += step)
+      yield {
+        cx: +x.toFixed(1),
+        cy: +y.toFixed(1),
+        d: +((x + (h - y)) / (w + h)).toFixed(3),
+      }
+}())
+
 // Each row observes its own root, so the list can hold any number of entries
 // (no fixed pool of useReveal() instances in the parent). Keep the whole object:
 // a destructured top-level `el` ref would auto-unwrap in `:ref` and bind null.
@@ -53,6 +69,22 @@ const isShowcase = computed(() => props.work.kind === 'showcase')
         sizes="(max-width: 720px) 100vw, 240px"
         loading="lazy"
       />
+      <!-- Hover wave: dots pop on and off, travelling bottom-left → top-right. -->
+      <svg
+        class="wave"
+        :viewBox="`0 0 ${WAVE_VB.w} ${WAVE_VB.h}`"
+        preserveAspectRatio="none"
+        aria-hidden="true"
+      >
+        <circle
+          v-for="(dot, i) in waveDots"
+          :key="i"
+          :cx="dot.cx"
+          :cy="dot.cy"
+          r="6.5"
+          :style="{ '--d': dot.d }"
+        />
+      </svg>
     </div>
   </component>
 </template>
@@ -129,7 +161,7 @@ h3 {
 p {
   font-size: clamp(15px, 1.3vw, 18px);
   color: var(--color-ink-soft);
-  max-width: 46ch;
+  max-width: 70ch;
 }
 
 .meta {
@@ -160,6 +192,7 @@ p {
 }
 
 .work-thumb {
+  position: relative;
   width: clamp(150px, 18vw, 240px);
   aspect-ratio: 16 / 10;
   background: var(--color-tile);
@@ -170,11 +203,64 @@ p {
   transition: border-color 0.3s, transform 0.35s;
 }
 
+/* Dot veil: real halftone dots in the brand portrait's language (19-unit grid,
+   radius encodes value) — solid white in the bottom-left corner, dissolving into
+   dots and out to transparent toward the middle. Generated SVG in /public; fades
+   out on hover to uncover the clean screenshot. */
+.work-thumb::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: url('/references/dot-veil.svg') left bottom / 100% 100% no-repeat;
+  z-index: 2;
+  transition: opacity 0.5s var(--ease-brand);
+}
+
+/* Hover wave layer: full-coverage dot grid, invisible at rest. On hover each dot
+   pops (scale 0→1→0) with a diagonal delay, so a band of dots travels bottom-left
+   → top-right and clears — then the colour screenshot is revealed. */
+.wave {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.wave circle {
+  fill: #fff;
+  transform: scale(0);
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.work-row:hover .wave circle {
+  /* dot on-time (0.4s) is shorter than the diagonal delay spread (0.75s), so only a
+     narrow band of dots is lit at once — that band travels bottom-left → top-right. */
+  animation: dot-wave 0.4s var(--ease-brand) both;
+  animation-delay: calc(var(--d) * 0.75s);
+}
+
+@keyframes dot-wave {
+  0% { transform: scale(0); }
+  42% { transform: scale(1); }
+  100% { transform: scale(0); }
+}
+
 .work-thumb img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  /* Website screenshots: keep the top (logo + hero) in view, not the middle. */
+  object-position: top;
   display: block;
+  /* Desaturated at rest so the only full-colour surfaces on the page stay calm and
+     monochrome; colour blooms in on hover — echoing the hero's "colour lives under
+     interaction" lens. */
+  filter: grayscale(1) contrast(1.02);
+  transition: filter 0.5s var(--ease-brand);
 }
 
 /* hover mechanics (showcase rows) */
@@ -198,6 +284,31 @@ p {
 .work-row:hover .work-thumb {
   border-color: var(--color-orange);
   transform: translateY(-3px);
+}
+
+/* colour blooms in on hover — delayed so the dot wave sweeps across first,
+   then the (colour) site "appears" behind it. */
+.work-row:hover .work-thumb img {
+  filter: grayscale(0) contrast(1);
+  transition-delay: 0.45s;
+}
+
+/* rest veil clears as the wave takes over */
+.work-row:hover .work-thumb::after {
+  opacity: 0;
+}
+
+/* Reduced motion: still reveal colour (it carries meaning), just without the fade. */
+@media (prefers-reduced-motion: reduce) {
+  .work-thumb img,
+  .work-thumb::after {
+    transition: none;
+  }
+
+  /* no travelling wave — dots stay hidden, colour just reveals */
+  .work-row:hover .wave circle {
+    animation: none;
+  }
 }
 
 @media (max-width: 720px) {

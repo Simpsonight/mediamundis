@@ -115,7 +115,7 @@ export const services: Service[] = [
   {
     id: 'software-development',
     title: 'Softwareentwicklung & Individualsoftware',
-    body: 'Skalierbare Web-Applikationen, Plattformen und individuelle Softwarelösungen, die langfristig wartbar bleiben — von der Architektur über Entwicklung und Qualitätssicherung bis zum produktiven Betrieb.',
+    body: 'Entwicklung skalierbarer Web-Applikationen, Plattformen und individueller Softwarelösungen — mit Schwerpunkt auf moderner Frontend-Architektur, sauberer Systemintegration und langfristiger Wartbarkeit. Von der technischen Konzeption über Entwicklung, Schnittstellen und Qualitätssicherung bis zum produktiven Betrieb.',
     tags: [
       'TypeScript',
       'Vue',
