@@ -39,19 +39,13 @@ export interface ShowcaseWork extends WorkBase {
 
 export type Work = TechnicalWork | ShowcaseWork
 
-export type ClientMark =
-  | 'ringo'
-  | 'veltra'
-  | 'nordwerk'
-  | 'paytide'
-  | 'orbion'
-  | 'helixa'
-  | 'klinverio'
-  | 'statera'
-
 export interface Client {
+  /** Brand name — used as the image alt text. */
   name: string
-  mark: ClientMark
+  /** Public path to the real logo file (SVG/PNG/AVIF). */
+  src: string
+  /** Optical size multiplier (default 1) to balance uneven logo proportions. */
+  scale?: number
 }
 
 export interface NavLink {

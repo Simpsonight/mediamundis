@@ -7,7 +7,7 @@ import { clients } from '~/data/clients'
     <!-- Label is visible and readable by AT -->
     <p class="lbl">Vertrauen von</p>
 
-    <!-- Marquee container: aria-hidden because logos are decorative placeholders -->
+    <!-- Marquee container: aria-hidden because the track is duplicated + animated -->
     <div class="marquee" aria-hidden="true">
       <div class="marquee-track">
         <!-- First pass: real items -->
