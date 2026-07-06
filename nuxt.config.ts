@@ -51,8 +51,11 @@ export default defineNuxtConfig({
     },
   },
 
-  // SSG: alle verlinkten Routen statisch vorrendern
+  // SSG: alle verlinkten Routen statisch vorrendern.
+  // preset 'static' erzwingt die Ausgabe nach .output/public – auch auf Netlify,
+  // das sonst per Auto-Detection das netlify-static-Preset (Output: dist/) wählt.
   nitro: {
+    preset: 'static',
     prerender: {
       crawlLinks: true,
       routes: ['/'],
