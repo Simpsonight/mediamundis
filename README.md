@@ -1,12 +1,12 @@
 # mediamundis
 
-Marketing- und Landingpage für **mediamundis** – die Person-Marke von Simon Kemmerling (Senior Fullstack Developer & Solution Architect), gerahmt als Firma. Deutschsprachig, statisch vorgerendert (SSG), SEO- und GEO-optimiert.
+Marketing and landing page for **mediamundis** - the personal brand of Simon Kemmerling (Senior Fullstack Developer & Solution Architect), framed as a firm. German-language, statically prerendered (SSG), SEO- and GEO-optimized.
 
 ## Stack
 
-- **Nuxt 4** + **Vue 3** (Quellcode unter `app/`)
-- **Tailwind CSS v4** – CSS-first über `@tailwindcss/vite`, kein `tailwind.config.js`
-- **@nuxtjs/seo** – Robots, Sitemap, OG-Image, Schema.org, Site-Config
+- **Nuxt 4** + **Vue 3** (source under `app/`)
+- **Tailwind CSS v4** - CSS-first via `@tailwindcss/vite`, no `tailwind.config.js`
+- **@nuxtjs/seo** - robots, sitemap, OG image, Schema.org, site config
 - **@nuxt/image**, **@nuxt/fonts** (Archivo), **@nuxt/eslint**, **@vueuse/core**
 
 ## Setup
@@ -15,36 +15,35 @@ Marketing- und Landingpage für **mediamundis** – die Person-Marke von Simon K
 npm install
 ```
 
-## Entwicklung
+## Development
 
 ```bash
-npm run dev        # Dev-Server auf http://localhost:3000
-npm run lint       # ESLint (Flat Config)
+npm run dev        # dev server at http://localhost:3000
+npm run lint       # ESLint (flat config)
 ```
 
 ## Build & Prerender
 
 ```bash
-npm run build      # Produktions-Build
-npm run generate   # Statisches Prerender → .output/public
-npm run preview    # Produktions-Build lokal ansehen
+npm run build      # production build
+npm run generate   # static prerender → .output/public
+npm run preview    # preview the production build locally
 ```
 
-Es gibt kein Unit-Test-Framework; Verifikation erfolgt über `npm run lint` + `npm run generate` und Sichtprüfung.
-
-## Struktur
+## Structure
 
 ```
 app/
-  app.vue              # Root: Layout + globale SEO/Schema.org-Defaults
-  layouts/default.vue  # header/main/footer-Shell
-  pages/               # index.vue (Landing), impressum.vue, datenschutz.vue
-  components/          # Atomic Design: atoms/ · molecules/ · organisms/
-  composables/         # SSR-sichere Motion-/Interaktions-Helfer (@vueuse)
-  data/                # Sämtliche Inhalte als typisierte Daten (types.ts)
-  assets/css/main.css  # Design-System: @theme-Tokens + @utility
-public/                # llms.txt, Favicon, Brand-Assets
-docs/                  # website-texte.md (Text-Vorlage), demo.html (Referenz)
+  app.vue              # root: layout + global SEO/Schema.org defaults
+  error.vue            # custom error page (404/500)
+  layouts/default.vue  # header/main/footer shell
+  pages/               # index.vue (landing), impressum.vue, datenschutz.vue
+  components/          # atomic design: atoms/ · molecules/ · organisms/
+  composables/         # SSR-safe motion/interaction helpers (@vueuse)
+  data/                # all content as typed data (types.ts)
+  assets/css/main.css  # design system: @theme tokens + @utility
+public/                # llms.txt, favicon, brand assets
+docs/                  # website-texte.md (copy source), demo.html (reference)
 ```
 
-**Inhalte liegen als Daten in `app/data/*.ts`**, nicht im Markup – zum Ändern von Texten oder Sektionen die Datendatei bearbeiten, nicht die Komponente. Details und Konventionen: siehe [`CLAUDE.md`](./CLAUDE.md).
+**Content lives as data in `app/data/*.ts`**, not in the markup - to change copy or sections, edit the data file, not the component. Details and conventions: see [`CLAUDE.md`](./CLAUDE.md).
