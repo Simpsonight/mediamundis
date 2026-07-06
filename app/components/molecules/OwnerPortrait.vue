@@ -33,6 +33,7 @@ const dev = computed(() => {
     :style="{ '--dev': dev }"
     role="img"
     aria-label="Simon Kemmerling, Inhaber von mediamundis"
+    fetchpriority="high"
   >
     <span class="ink" aria-hidden="true" />
   </figure>

@@ -60,7 +60,7 @@ const rCvNote = useReveal()
 
 /* grey accent on "zufriedene Kunden." */
 .g {
-  color: var(--color-grey);
+  color: var(--color-grey-strong);
 }
 
 /* top border on work list */

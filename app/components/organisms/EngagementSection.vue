@@ -59,7 +59,7 @@ const rCards = [rCard0, rCard1]
 
 /* grey accent on the second half of the headline */
 .g {
-  color: var(--color-grey);
+  color: var(--color-grey-strong);
 }
 
 .eng-grid {
