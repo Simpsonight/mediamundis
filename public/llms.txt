@@ -1,0 +1,34 @@
+# mediamundis
+
+> mediamundis ist ein Software- und Beratungsstudio aus dem Rheinland (Raum Köln),
+> verantwortet von Simon Kemmerling, Senior Fullstack Developer und Solution Architect
+> mit über 20 Jahren Erfahrung.
+
+## Leistungen
+- Softwareentwicklung: Individualsoftware, skalierbare Web-Applikationen und Plattformen —
+  Architektur bis Betrieb (TypeScript, Vue/Nuxt, Angular, React, Node.js, AWS/Serverless).
+- Consulting: IT-Beratung, Solution Architecture, Requirements Engineering, technische
+  Konzeption, Tech-Due-Diligence, Architektur-Reviews, Team-Enablement.
+- Künstliche Intelligenz (KI/AI): LLM- und RAG-Anwendungen, Prozessautomatisierung, KI in
+  Produktion — evaluierbar, abgesichert, betrieblich getestet.
+- Websites, Performance & technische SEO: Core Web Vitals, Barrierefreiheit, messbare Optimierung.
+
+## Zusammenarbeit
+- Projektumsetzung für den Mittelstand: individuelle Software, Websites und KI-Anwendungen
+  schlüsselfertig, bei Bedarf ergänzt durch ein festes Entwickler-Netzwerk.
+- Senior-Verstärkung für interne Teams: als Freelancer, Interim Lead oder Solution Architect
+  auf Zeit — remote, deutschlandweit.
+
+## Kontakt
+- E-Mail: sk@mediamundis.de — Rheinland · remote überall.
+
+## Optional
+- Startseite: https://www.mediamundis.de/
+- Impressum: https://www.mediamundis.de/impressum
+- Datenschutz: https://www.mediamundis.de/datenschutz
+
+## Hinweise
+- Sprache: Deutsch.
+- Die im "Projekte"-Bereich gezeigten Referenzen basieren auf realen Projekten, sind aus
+  Vertraulichkeitsgründen aber anonymisiert (Branche, Technologie und Ergebnis statt Kundenname).
+- Die im "Vertrauen von"-Bereich gezeigten Logos sind reale Kundenmarken.

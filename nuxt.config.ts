@@ -1,22 +1,72 @@
-import { defineNuxtConfig } from 'nuxt'
+// https://nuxt.com/docs/api/configuration/nuxt-config
+import tailwindcss from '@tailwindcss/vite';
 
-// https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-    typescript: {
-        shim: false
-    },
-    buildModules: [
-        '@nuxtjs/google-fonts'
+  compatibilityDate: '2026-06-29',
+  devtools: { enabled: true },
+
+  modules: ['@nuxt/eslint', '@nuxt/fonts', '@nuxt/image', '@nuxtjs/seo'],
+
+  // Disable folder-name path prefixes so components can be used by bare name
+  // (e.g. <HeroSection /> instead of <OrganismsHeroSection />)
+  components: [
+    { path: '~/components', pathPrefix: false },
+  ],
+
+  css: ['~/assets/css/main.css'],
+
+  vite: {
+    plugins: [tailwindcss()],
+  },
+
+  // SEO/GEO: zentrale Site-Identität (von @nuxtjs/seo genutzt)
+  site: {
+    url: 'https://www.mediamundis.de',
+    name: 'mediamundis',
+    defaultLocale: 'de',
+  },
+
+  // SEO/GEO: KI-Crawler und Suchmaschinen-Bots ausdrücklich zulassen (GEO-Absicht)
+  robots: {
+    groups: [
+      {
+        // GEO: KI-Crawler (ChatGPT, Perplexity, Claude, Google-Extended) explizit zulassen
+        userAgent: ['Googlebot', 'GPTBot', 'PerplexityBot', 'ClaudeBot', 'Google-Extended'],
+        allow: ['/'],
+      },
     ],
-    googleFonts: {
-        download: true,
-        base64: true,
-        display: 'swap',
-        families: {
-            Raleway: {
-                wght: [100, 300],
-                ital: [100]
-            },
-        }
-    }
-})
+  },
+
+  app: {
+    head: {
+      htmlAttrs: { lang: 'de' },
+      link: [
+        { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
+        { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' },
+        { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' },
+        { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
+        { rel: 'manifest', href: '/site.webmanifest' },
+      ],
+      meta: [{ name: 'theme-color', content: '#17181b' }],
+    },
+  },
+
+  // SSG: alle verlinkten Routen statisch vorrendern
+  nitro: {
+    prerender: {
+      crawlLinks: true,
+      routes: ['/'],
+    },
+  },
+
+  fonts: {
+    defaults: {
+      preload: true,
+      display: 'swap',
+      weights: [400, 500, 600, 700, 800],
+    },
+    families: [
+      { name: 'Archivo', provider: 'google', weights: [400, 500, 600, 700, 800], styles: ['normal'], global: true },
+    ],
+  },
+});

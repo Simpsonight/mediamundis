@@ -1,0 +1,286 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Archivo', system-ui, -apple-system, sans-serif;
+
+  --color-bg: #ffffff;
+  --color-card: #ffffff;
+  --color-ink: #17181b;
+  --color-ink-soft: #4c4e52;
+  --color-grey: #94999c;
+  --color-grey-strong: #6b7074;
+  --color-grey-soft: #c7c9cb;
+  --color-orange: #f59a18;
+  --color-line: #e6e7e8;
+  --color-tile: #f4f4f5;
+  --color-dot: #ecedee;
+  --color-dot-mini: #dfe0e1;
+
+  --text-hero: clamp(38px, 6.3vw, 112px);
+  --text-contact: clamp(46px, 9vw, 150px);
+  --text-work-intro: clamp(30px, 5.4vw, 80px);
+  --text-card-title: clamp(32px, 5.2vw, 76px);
+  --text-work-title: clamp(26px, 3.6vw, 54px);
+  --text-card-body: clamp(17px, 1.7vw, 26px);
+  --text-lead: clamp(18px, 1.7vw, 25px);
+  --text-lead-soft: clamp(15px, 1.3vw, 18px);
+  --text-logo: clamp(18px, 1.9vw, 25px);
+  --text-menu: clamp(40px, 8vw, 104px);
+
+  /* motion */
+  --ease-brand: cubic-bezier(0.2, 0.7, 0.2, 1);
+
+  /* tag surface (was hardcoded #FBFBFB) */
+  --color-tag: #fbfbfb;
+
+  /* fluid spacing scale */
+  --space-2xs: clamp(8px, 1.2vw, 12px);
+  --space-xs: clamp(12px, 2vw, 20px);
+  --space-sm: clamp(20px, 3vw, 32px);
+  --space-md: clamp(32px, 4.5vw, 56px);
+  --space-lg: clamp(48px, 7vw, 90px);
+  --space-xl: clamp(64px, 9vw, 120px);
+  --space-2xl: clamp(80px, 11vw, 168px);
+}
+
+:root {
+  --maxw: 1320px;
+  --navh: 80px;
+  --gutter: clamp(24px, 5vw, 56px);
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: var(--font-sans);
+    background: var(--color-bg);
+    color: var(--color-ink);
+    letter-spacing: -0.01em;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  ::selection {
+    background: var(--color-orange);
+    color: #fff;
+  }
+}
+
+@utility wrap {
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+@utility content-panel {
+  position: relative;
+  z-index: 2;
+  background: var(--color-bg);
+  box-shadow: 0 -24px 70px rgba(20, 22, 26, 0.1);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.reveal.in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition-duration: 0.001ms !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ===========================================================================
+   Print — sauberes, tintensparendes Druckbild.
+   Bildschirm-Chrome (fixe Nav, Menü, Deko-Grafiken, Marquee, Hover-Icons) raus;
+   Reveal-Animationen zwingend sichtbar; sticky/Full-Height entpinnt; die fluide
+   vw-Typo/Abstände auf feste pt/px umgestellt (vw bezieht sich auf Papierbreite);
+   Portrait & Showcase-Thumbnails bleiben; Orange-Akzent bleibt dezent erhalten.
+   =========================================================================== */
+@media print {
+  @page {
+    margin: 18mm 16mm;
+  }
+
+  /* Fluide Tokens auf feste, papiertaugliche Werte umdefinieren.
+     Alle Elemente, die var(--text-*)/var(--space-*) nutzen, folgen automatisch. */
+  :root {
+    --navh: 0px;
+    --gutter: 0px;
+
+    --text-hero: 30pt;
+    --text-contact: 26pt;
+    --text-work-intro: 20pt;
+    --text-card-title: 21pt;
+    --text-work-title: 16pt;
+    --text-card-body: 12pt;
+    --text-lead: 12pt;
+    --text-lead-soft: 10pt;
+    --text-logo: 12pt;
+    --text-menu: 20pt;
+
+    --space-2xs: 6px;
+    --space-xs: 8px;
+    --space-sm: 12px;
+    --space-md: 16px;
+    --space-lg: 20px;
+    --space-xl: 28px;
+    --space-2xl: 36px;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+  body {
+    background: #fff;
+    color: var(--color-ink);
+    overflow: visible;
+    font-size: 11pt;
+    line-height: 1.5;
+    letter-spacing: 0;
+    /* Orange-Markenakzent auch im Druck erhalten (S/W-Drucker → Grau). */
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Animationen/Transitions still; Reveal-Inhalte zwingend sichtbar.
+     .work-row trägt selbst die reveal-Klasse → ohne dies bliebe es leer. */
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* Chrome, Overlays und reine Deko entfernen. */
+  #nav,
+  #menu-overlay,
+  .overlay,
+  .menu-toggle,
+  .scroll-cue,
+  .dotfield,
+  .dotgrid,
+  .dot-canvas,
+  .dot-grid,
+  .matrix,
+  .spot,
+  .clients,
+  .marquee,
+  .marquee-track,
+  .arrow-btn,
+  .ar,
+  .visit-ar,
+  .pill-icon,
+  .arrow-icon,
+  .back {
+    display: none !important;
+  }
+
+  /* Sticky / Full-Height entpinnen → keine Leerseiten, kein Versatz. */
+  .hero {
+    position: static !important;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+  }
+  .lead {
+    min-height: 0 !important;
+  }
+  /* Card: sticky → static is safe (no positioned dark children remain). */
+  .card {
+    position: static !important;
+    min-height: 0 !important;
+  }
+  /* Portrait: sticky → RELATIVE (not static). Its child `.ink` is
+     position:absolute; inset:0 — a static parent would release it to fill
+     .content-panel and paint a dark layer behind every section. Keeping the
+     portrait a positioned box preserves the SVG-mask containment. */
+  .lead-portrait,
+  .portrait {
+    position: relative !important;
+  }
+
+  /* Schatten/erhabene Flächen flach für Papier. */
+  .content-panel,
+  .card,
+  .eng-card,
+  .work-thumb {
+    box-shadow: none !important;
+  }
+
+  /* Portrait fertig „entwickelt" zeigen (sonst scroll-abhängig unsichtbar)
+     und Bildgrößen auf vernünftiges Druckmaß begrenzen. */
+  .portrait {
+    --dev: 1 !important;
+  }
+  .portrait .ink {
+    opacity: 1 !important;
+  }
+  /* Portrait kleiner und vollständig sichtbar (nicht im Anschnitt).
+     Der Mobile-Breakpoint setzt height:40vh + mask/cover → riesig und
+     beschnitten; hier auf feste Breite mit contain-Maske zurücksetzen. */
+  .portrait,
+  .lead-portrait {
+    width: 55mm !important;
+    max-width: 55mm !important;
+    height: auto !important;
+    aspect-ratio: 2679.64 / 3037.39 !important;
+    margin: 0 auto !important;
+    -webkit-mask: url(/simon-kemmerling.svg) center / contain no-repeat !important;
+    mask: url(/simon-kemmerling.svg) center / contain no-repeat !important;
+  }
+  /* Referenz-Thumbnails: max. 4 cm breit (Seitenverhältnis 16/10 → 40×25 mm). */
+  .work-thumb {
+    width: 40mm !important;
+  }
+  .work-thumb img,
+  img {
+    max-width: 100% !important;
+    height: auto;
+  }
+
+  /* Seitenumbruch-Hygiene. */
+  h1,
+  h2,
+  h3 {
+    break-after: avoid-page;
+  }
+  .card,
+  .eng-card,
+  .work-row,
+  .work-thumb {
+    break-inside: avoid;
+  }
+  p {
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* Legal-Seiten: der padding-top kompensiert die (jetzt entfernte) fixe Nav. */
+  .legal {
+    padding-top: var(--space-lg) !important;
+  }
+}
