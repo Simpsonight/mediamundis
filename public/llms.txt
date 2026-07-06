@@ -20,12 +20,14 @@
   auf Zeit — remote, deutschlandweit.
 
 ## Kontakt
-- E-Mail: sk@mediamundis.de — Rheinland · remote überall.
+- E-Mail: [sk@mediamundis.de](mailto:sk@mediamundis.de) — Rheinland · remote überall.
+
+## Seiten
+- [Startseite](https://www.mediamundis.de/): Leistungen, Zusammenarbeitsmodelle, Referenzen und Kontakt.
 
 ## Optional
-- Startseite: https://www.mediamundis.de/
-- Impressum: https://www.mediamundis.de/impressum
-- Datenschutz: https://www.mediamundis.de/datenschutz
+- [Impressum](https://www.mediamundis.de/impressum): Anbieterkennzeichnung nach § 5 DDG.
+- [Datenschutz](https://www.mediamundis.de/datenschutz): Datenschutzerklärung.
 
 ## Hinweise
 - Sprache: Deutsch.

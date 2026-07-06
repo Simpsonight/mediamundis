@@ -59,7 +59,7 @@ h2 {
 
 /* grey accent */
 .g {
-  color: var(--color-grey);
+  color: var(--color-grey-strong);
 }
 
 /* intro line under the headline */
