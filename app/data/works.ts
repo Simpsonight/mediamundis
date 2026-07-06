@@ -40,7 +40,7 @@ export const works: Work[] = [
     url: 'https://tippkemper.de',
     siteName: 'tippkemper.de',
     image: {
-      src: '/references/beispiel-eins.png',
+      src: '/references/sample-norsonic-tippkemper.png',
       alt: 'Screenshot der Startseite von tippkemper.de — B2B-Industrieunternehmen',
       width: 1600,
       height: 872,
@@ -84,7 +84,7 @@ export const works: Work[] = [
     url: 'https://cplus.vetworking.de/',
     siteName: 'cplus.vetworking.de',
     image: {
-      src: '/references/beispiel-zwei.png',
+      src: '/references/sample-cplus.png',
       alt: 'Screenshot der Startseite von cplus.vetworking.de — Webinar-Buchungsplattform',
       width: 1600,
       height: 872,
