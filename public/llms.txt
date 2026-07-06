@@ -22,8 +22,13 @@
 ## Kontakt
 - E-Mail: sk@mediamundis.de — Rheinland · remote überall.
 
+## Optional
+- Startseite: https://www.mediamundis.de/
+- Impressum: https://www.mediamundis.de/impressum
+- Datenschutz: https://www.mediamundis.de/datenschutz
+
 ## Hinweise
 - Sprache: Deutsch.
 - Die im "Projekte"-Bereich gezeigten Referenzen basieren auf realen Projekten, sind aus
   Vertraulichkeitsgründen aber anonymisiert (Branche, Technologie und Ergebnis statt Kundenname).
-- Die im "Vertrauen von"-Bereich gezeigten Logos sind derzeit Platzhalter.
+- Die im "Vertrauen von"-Bereich gezeigten Logos sind reale Kundenmarken.

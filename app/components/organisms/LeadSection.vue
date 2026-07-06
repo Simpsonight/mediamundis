@@ -25,6 +25,8 @@ const progress = usePinProgress(section)
             :key="s.label"
             :href="s.href"
             class="lead-social"
+            target="_blank"
+            rel="noopener noreferrer"
           >{{ s.label }}</a>
         </nav>
       </div>

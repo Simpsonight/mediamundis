@@ -1,5 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <!-- Placeholder favicon: rounded square brand blue #2563eb with white "mm" mark. Replace with final brand asset. -->
-  <rect width="32" height="32" rx="6" fill="#2563eb"/>
-  <text x="16" y="22" font-family="sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="-0.5">mm</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <rect width="32" height="32" rx="7.04" fill="#17181b"/>
+  <path d="M7.68 21.76 L7.68 15.040000000000001 A4.16 4.16 0 0 1 16 15.040000000000001 L16 21.76 M16 15.040000000000001 A4.16 4.16 0 0 1 24.32 15.040000000000001 L24.32 21.76" fill="none" stroke="#f59a18" stroke-width="3.52" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

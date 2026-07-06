@@ -3,6 +3,17 @@ import type { SiteContent } from './types';
 export const site: SiteContent = {
   email: 'sk@mediamundis.de',
   location: 'Rheinland · remote überall',
+  // NAP/Firmen-Identität — Single Source für Impressum und Schema.org (GEO/Local-SEO).
+  business: {
+    legalName: 'Simon Kemmerling',
+    streetAddress: 'Auf dem Plägen 2',
+    postalCode: '51491',
+    addressLocality: 'Overath',
+    addressCountry: 'DE',
+    telephone: '+49 151 52480017',
+    vatID: 'DE219418526',
+    areaServed: 'Rheinland',
+  },
   navLinks: [
     { href: '#leistungen', label: 'Leistungen' },
     { href: '#arbeitsweise', label: 'Arbeitsweise' },
@@ -29,11 +40,10 @@ export const site: SiteContent = {
       'Im Mittelpunkt stehen belastbare Lösungen statt Präsentationen: klare Architektur, wartbarer Code und Software, die im Betrieb zuverlässig funktioniert. Für größere Vorhaben arbeite ich mit einem festen Netzwerk erfahrener Entwickler zusammen — mit einem zentralen Ansprechpartner und voller Verantwortung.',
     profile:
       '20+ Jahre Praxis · Fullstack Development & Solution Architecture · Schwerpunkte: Web- und Softwareentwicklung, Consulting und KI · Branchenübergreifend — u. a. Industrie, Mittelstand, B2B, Media, Finanzen, Handel, Healthcare und Sport',
-    // TODO: finale Profil-URLs von Simon ergänzen (aktuell Platzhalter).
     socials: [
-      { href: '#', label: 'LinkedIn' },
-      { href: '#', label: 'Xing' },
-      { href: '#', label: 'GitHub' },
+      { href: 'https://www.linkedin.com/in/simon-kemmerling/', label: 'LinkedIn' },
+      { href: 'https://www.xing.com/profile/Simon_Kemmerling', label: 'Xing' },
+      { href: 'https://github.com/Simpsonight', label: 'GitHub' },
     ],
   },
 };

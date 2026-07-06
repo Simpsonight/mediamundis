@@ -58,6 +58,18 @@ export interface SocialLink {
   label: string
 }
 
+/** Company / NAP identity — single source for both Impressum and Schema.org. */
+export interface BusinessInfo {
+  legalName: string
+  streetAddress: string
+  postalCode: string
+  addressLocality: string
+  addressCountry: string
+  telephone: string
+  vatID: string
+  areaServed: string
+}
+
 /** One of the two ways to work together (Arbeitsweise section). */
 export interface Engagement {
   id: string
@@ -71,6 +83,7 @@ export interface Engagement {
 export interface SiteContent {
   email: string
   location: string
+  business: BusinessInfo
   navLinks: NavLink[]
   legalLinks: NavLink[]
   hero: {
